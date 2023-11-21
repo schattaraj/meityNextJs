@@ -1,0 +1,40 @@
+footer{
+    .footer-logo{
+        img{
+            width: 100%;
+        }
+    }
+    .top{
+        background-color: #212121;
+    padding: 48px 0;
+    color: #ffffff;
+    a{
+        display: block;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    margin-bottom: 16px;
+    }
+    h3{
+        font-size: 30px;
+        padding-bottom: 6px;
+        position: relative;
+        line-height: 120%;
+        font-weight: bold;
+        margin-bottom: 32px;
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
+        width: fit-content;
+    }
+    }
+    .copy-right{
+    background-color: #454545;
+    text-align: center;
+    color: #ffffff;
+    padding: 16px 0;
+    p{
+        font-size: 16px;
+        margin: 0;
+    }
+    }
+}
