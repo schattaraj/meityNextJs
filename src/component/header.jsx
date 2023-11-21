@@ -1,9 +1,32 @@
+import { request, gql } from "graphql-request";
+import { useQuery } from "react-query";
+
+const endpoint = "http://localhost/wordpress/graphql/";
+const Logo_Query = gql`{
+  pages{
+    edges{
+      node{
+        homePage{
+          logo{
+            mediaItemUrl
+          }
+        }
+      }
+    }
+  }
+}
+`
+
 export default function Header(){
+  const {data:logo} = useQuery("logo",async()=>{
+    const res = await request(endpoint, Logo_Query)
+    return res;
+  })
 return <>
 <div id="header-wrapper">
     <div id="header-container">
 
-		<div className="logo"> <a href="/" title="Home | Ministry of Electronics and Information Technology, Government of India"> <img src="/images/logo_en.png" alt="Emblam"/> </a> </div>
+		<div className="logo"> <a href="/" title="Home | Ministry of Electronics and Information Technology, Government of India"> <img src={logo?.pages?.edges[0]?.node?.homePage.logo.mediaItemUrl} alt="Emblam"/> </a> </div>
        
         <div id="search-home">
               <div className="region region-search-box">

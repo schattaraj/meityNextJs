@@ -3,15 +3,15 @@ export default function Footer() {
   return (
     <>
     <footer>
-    <div class="top">
-    <div class="container">
-    <div class="row">
-    <div class="col-lg-5">
+    <div className="top">
+    <div className="container">
+    <div className="row">
+    <div className="col-lg-5">
     <Link href="#" className="footer-logo"><img src="/images/logo_en.png" alt="Emblam"/> </Link>
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe at rerum eveniet explicabo, qui a?</p>
     </div>
-    <div class="col-lg-3">
-    <div class="quick-links">
+    <div className="col-lg-3">
+    <div className="quick-links">
     <h3>Quick Links</h3>
     <Link href="#">About Us</Link>
     <Link href="#">Division</Link>
@@ -20,7 +20,7 @@ export default function Footer() {
     <Link href="#">Notifications</Link>
     </div>
     </div>
-    <div class="col-lg-4">
+    <div className="col-lg-4">
     <h3>Contact Us</h3>
     <h4>
     <span>Electronics Niketan, 6, CGO Complex</span></h4>

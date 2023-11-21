@@ -7,28 +7,86 @@ import Carousel from 'react-bootstrap/Carousel';
 import Footer from '@/component/footer';
 import { request, gql } from "graphql-request";
 import { useQuery } from "react-query";
+import { useEffect, useState } from 'react';
 
 const endpoint = "http://localhost/wordpress/graphql/";
-const FILMS_QUERY = gql`
+
+const BANNER_QUERY = gql`
   {
-    posts {
+    pages {
       edges {
         node {
-          title,content
+          homePage {
+            fieldGroupName
+            bannerDetails {
+              bannerTitle
+              bannerImage {
+                mediaItemUrl
+              }
+            }
+          }
         }
       }
     }
   }
 `;
+const History_Query = gql`
+{
+  pages {
+    edges {
+      node {
+        homePage {
+         historyText
+          historyImage {
+            mediaItemUrl
+          }
+        }
+      }
+    }
+  }
+}`
+
+const Mission_Query = gql`
+{
+  pages {
+    edges {
+      node {
+        homePage {
+         missionText
+          missionImage {
+            mediaItemUrl
+          }
+        }
+      }
+    }
+  }
+}
+`
+
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
-  const { data, isLoading, error } = useQuery("posts", () => {
-    return request(endpoint, FILMS_QUERY);
+  const [state,setState] = useState(false) 
+    const { data:banner, isLoading, error } = useQuery("posts", async() => {
+      const res = await request(endpoint, BANNER_QUERY);
+      return res;
+    });
+
+  const { data:history } = useQuery("pages", async() => {
+    const res = await request(endpoint, History_Query)
+    return res;
   });
-  console.log("data",data)
-  if (isLoading) return "Loading...";
-  if (error) return <pre>{error.message}</pre>;
+
+  const {data:mission} = useQuery("mission",async()=>{
+    const res = await request(endpoint, Mission_Query)
+    return res;
+  })
+  
+  console.log("data",banner)
+console.log("historyData",history)
+
+//   if (isLoading) return "Loading...";
+//   if (error) return <pre>{error.message}</pre>;
   return (
     <>
       <Head>
@@ -40,11 +98,15 @@ export default function Home() {
     <Header/>
     <div className="banner1">
     <Carousel>
-      <Carousel.Item>
-      <img typeof="foaf:Image" src="https://www.meity.gov.in/writereaddata/files/banner/3.-MeitY_0.png"  alt="Call for Application for the Global AI Expo" title="Call for Application for the Global AI Expo"/>
-      
-      </Carousel.Item>
-      <Carousel.Item>
+      {
+      banner && banner?.pages?.edges[0]?.node?.homePage?.bannerDetails?.map((item,index)=>{
+          return  <Carousel.Item>
+          <img typeof="foaf:Image" src={item.bannerImage.mediaItemUrl}/>
+          </Carousel.Item>
+        })
+      }
+     
+      {/* <Carousel.Item>
       <img typeof="foaf:Image" src="/images/juGajmc1gOVBUtt5.jpeg"  alt="Call for Application for the Global AI Expo" title="Call for Application for the Global AI Expo"/>
         
         
@@ -52,10 +114,10 @@ export default function Home() {
       <Carousel.Item>
       <img typeof="foaf:Image" src="/images/Genesis Banner (MeitY Website).png"  alt="Call for Application for the Global AI Expo" title="Call for Application for the Global AI Expo"/>
       
-      </Carousel.Item>
+      </Carousel.Item> */}
     </Carousel>
     </div>
-    <h1>Posts</h1>
+    {/* <h1>Posts</h1>
       <ul>
         {data.posts.edges.map((edge) => (
           <li key={edge.node.title}>
@@ -63,18 +125,18 @@ export default function Home() {
             <p>{edge.node.content}</p>
             </li>
         ))}
-      </ul>
+      </ul> */}
     <div className="about gap">
       <div className="container">
         <div className="row">
           <div className="col-md-6">
             <h3 className="heading">Our History</h3>
-            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. </p>
-            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.</p>
+            <p>{history?.pages?.edges[0]?.node?.homePage.historyText}</p>
+            
           </div>
           <div className="col-md-6">
-          <div class="image">
-<img src="/images/news1.png" alt=""/>
+          <div className="image">
+<img src={history?.pages?.edges[0]?.node?.homePage.historyImage.mediaItemUrl} alt=""/>
 </div>
           </div>
         </div>
@@ -84,13 +146,13 @@ export default function Home() {
       <div className="container">
         <div className="row align-items-center">
         <div className="col-md-6">
-          <div class="image">
-<img src="/images/about.png" alt=""/>
+          <div className="image">
+<img src={mission?.pages?.edges[0]?.node?.homePage.missionImage.mediaItemUrl} alt=""/>
 </div>
           </div>
           <div className="col-md-6">
-            <h3 className="heading dash">We believe in the power of the media to change lives</h3>
-            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.</p>
+            <h3 className="heading dash">Our Mission</h3>
+            <p>{mission?.pages?.edges[0]?.node?.homePage.missionText}</p>
           </div>
           
         </div>
