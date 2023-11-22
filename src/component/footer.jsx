@@ -1,5 +1,28 @@
+import { request, gql } from "graphql-request";
+import { useQuery } from "react-query";
+
+const endpoint = "http://localhost/wordpress/graphql/";
+const Logo_Query = gql`{
+  pages{
+    edges{
+      node{
+        homePage{
+          logo{
+            mediaItemUrl
+          }
+        }
+      }
+    }
+  }
+}
+`
+
 import Link from "next/link"
 export default function Footer() {
+    const {data:logo} = useQuery("logo",async()=>{
+        const res = await request(endpoint, Logo_Query)
+        return res;
+      })
   return (
     <>
     <footer>
@@ -7,7 +30,7 @@ export default function Footer() {
     <div className="container">
     <div className="row">
     <div className="col-lg-5">
-    <Link href="#" className="footer-logo"><img src="/images/logo_en.png" alt="Emblam"/> </Link>
+    <Link href="#" className="footer-logo"><img src={logo?.pages?.edges[0]?.node?.homePage.logo.mediaItemUrl} alt="Emblam"/> </Link>
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe at rerum eveniet explicabo, qui a?</p>
     </div>
     <div className="col-lg-3">
