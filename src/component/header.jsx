@@ -25,7 +25,10 @@ export default function Header(){
 return <>
 <section className="top_head">
 		<div className="wrapper">
-			<div className="region region-header"><div className="region-inner clearfix"><div id="block-block-4" className="block block-block no-title"><div className="block-inner clearfix">  
+			<div className="region region-header">
+        <div className="region-inner clearfix">
+          <div id="block-block-4" className="block block-block no-title">
+            <div className="block-inner clearfix">  
   
   <div className="block-content content">       
 <div className="tophead_left">

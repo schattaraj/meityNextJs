@@ -127,12 +127,39 @@ console.log("historyData",history)
         ))}
       </ul> */}
     <div className="information">
+      <div className="container">
       <div className="row">
         <div className="col-md-4">
-          
+          <div className="content">
+            <h3 className="heading">News Highlights</h3>
+            <div className="card">
+              <ul>
+                <li>E-Commerce cargo movement sets course for Ganga (NW 1) as...</li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div className="col-md-5"></div>
-        <div className="col-md-3"></div>
+        <div className="col-md-5">
+          <div className="content">
+            <h3 className="heading">Most Requested Information & Forms</h3>
+            <div className="card">
+              <ul>
+                <li>E-Commerce cargo movement sets course for Ganga (NW 1) as...</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div className="col-md-3">
+          <div className="content">
+            <h3 className="heading">Activities & Initiatives</h3>
+            <div className="card">
+              <ul>
+                <li>E-Commerce cargo movement sets course for Ganga (NW 1) as...</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
       </div>
     </div>
     <Footer/>
