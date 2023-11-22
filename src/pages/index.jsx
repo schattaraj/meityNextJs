@@ -100,7 +100,7 @@ console.log("historyData",history)
     <Carousel>
       {
       banner && banner?.pages?.edges[0]?.node?.homePage?.bannerDetails?.map((item,index)=>{
-          return  <Carousel.Item>
+          return  <Carousel.Item key={index}>
           <img typeof="foaf:Image" src={item.bannerImage.mediaItemUrl}/>
           </Carousel.Item>
         })
