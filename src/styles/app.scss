@@ -85,4 +85,76 @@ nav span{
     h2{
         font-size: 14px;
     }
+    .wrapper{
+        .flex{
+            display: flex;
+        }
+    }
+    
+}
+.search_form{
+    width: 68%;
+}
+.search_section{ 
+    float: none;
+    .searchform .searchrow{
+    float: none;
+    width: 100%;
+    display: flex;
+    .search_form{
+        float: none;
+    }
+}
+}
+.search_section .searchform .searchrow input[type=text]{
+    float: none;
+    height: 100%;
+}
+.search_section .searchform .searchrow input.form-submit{
+    float: none;
+    height: 100%;
+}
+.search_section{
+    .searchrow{
+        .search_form{
+            form{
+                display: flex;
+            }
+            button.form-submit{
+                background-color: #fda103;
+                border:none;
+                height: 100%;
+                display: block;
+                color: #fff;
+                height: 45px;
+                padding: 0 12px;
+            }
+        }
+    }
+}
+a#advsearchbtn{
+    background: url("/images/advarrowup-wh.png") no-repeat scroll 91% 40% #5996d9;
+}
+.heraderbtm_col2{
+    float: none;
+}
+.heraderbtm_col2 #block-views-most-search-block .content ul{
+    display: flex;
+
+}
+.heraderbtm_col2 #block-views-most-search-block .content ul li.views-row{
+    float: none;
+}
+.heraderbtm_col2 h2, .heraderbtm_col2 .h2{
+    float: none;
+}
+.block-inner.clearfix{
+    display: flex;
+
+}
+.heraderbtm_col2 #block-views-most-search-block .content ul{
+    margin-bottom: 0;
+}
+.block-content.content{
+    width: 100%;
 }

@@ -126,36 +126,13 @@ console.log("historyData",history)
             </li>
         ))}
       </ul> */}
-    <div className="about gap">
-      <div className="container">
-        <div className="row">
-          <div className="col-md-6">
-            <h3 className="heading">Our History</h3>
-            <p>{history?.pages?.edges[0]?.node?.homePage.historyText}</p>
-            
-          </div>
-          <div className="col-md-6">
-          <div className="image">
-<img src={history?.pages?.edges[0]?.node?.homePage.historyImage.mediaItemUrl} alt=""/>
-</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div className="about mb-5">
-      <div className="container">
-        <div className="row align-items-center">
-        <div className="col-md-6">
-          <div className="image">
-<img src={mission?.pages?.edges[0]?.node?.homePage.missionImage.mediaItemUrl} alt=""/>
-</div>
-          </div>
-          <div className="col-md-6">
-            <h3 className="heading dash">Our Mission</h3>
-            <p>{mission?.pages?.edges[0]?.node?.homePage.missionText}</p>
-          </div>
+    <div className="information">
+      <div className="row">
+        <div className="col-md-4">
           
         </div>
+        <div className="col-md-5"></div>
+        <div className="col-md-3"></div>
       </div>
     </div>
     <Footer/>

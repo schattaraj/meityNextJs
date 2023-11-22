@@ -161,6 +161,7 @@ return <>
 
   <section class="header_botton">
 		<div class="wrapper">
+      <div className="flex">
 			<div class="search_section">
 				<div class="searchform">
 					<div class="searchrow"> 
@@ -171,7 +172,8 @@ return <>
     <form action="https://www.india.gov.in/gsearch" id="searchForm" autocomplete="off">
    <label for="search_key">Search</label>
       <input type="text" value="" maxlength="128" name="s" id="search_key" size="15" placeholder="Search - Keyword, Phrase" class="form-text searchText ui-autocomplete-input" autocomplete="off"/>                
-<input type="submit" name="op" value="Search" id="edit-submit1" class="form-submit"/>
+{/* <input type="submit" name="op" value="Search" id="edit-submit1" class="form-submit"/> */}
+<button className="form-submit">Search</button>
 <div id="auto_suggesion"></div>
     </form>
 </div>
@@ -186,6 +188,7 @@ return <>
             Title        </label>
                         <div class="views-widget">
           <div class="form-item form-type-textfield form-item-title">
+
  <input placeholder="Search Keyword" type="text" id="edit-title" name="title" value="" size="30" maxlength="128" class="form-text"/>
 </div>
         </div>
@@ -212,7 +215,9 @@ return <>
 </div>
       </div>
                 <div class="views-exposed-widget views-submit-button">
-      <input type="submit" id="edit-submit-advance-metadata-search" value="Search" class="form-submit" name="Advance search Submit Botton"/>    </div>
+                  {/* <button className="form-submit">Search</button> */}
+      <input type="submit" id="edit-submit-advance-metadata-search" value="Search" class="form-submit" name="Advance search Submit Botton"/>   
+       </div>
       </div>
 </div>
 </div></form>
@@ -247,8 +252,14 @@ return <>
   
   
   
-</div></div>
-  </div></section></div></div>			</div>
+</div>
+</div>
+  </div>
+  </section>
+  </div>
+  </div>		
+  	</div>
+    </div>
 		</div>
 	</section>
 </>
