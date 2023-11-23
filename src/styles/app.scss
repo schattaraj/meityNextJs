@@ -39,6 +39,11 @@ body {
     .carousel-indicators{
         display: none;
     }
+    @media (max-width:991px) {
+        img{
+            height: 260px;
+        }
+    }
 }
 .about{
     .heading{
