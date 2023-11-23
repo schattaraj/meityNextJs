@@ -6,12 +6,6 @@ const Gallery = () => {
       <div className="row">
         {/* Video Gallery */}
         <div className="col-md-5 col-xs-12 col-sm-12">
-          {/* <div className="video-heading">
-            <h3>Video Gallery</h3>
-            <a className="btn btn-primary" href="/en/media/video-gallery" title="View All About video">
-              View All
-            </a>
-          </div> */}
           <div className="video-wrapper" style={{ position: 'relative' }}>
             <div style={{ position: 'absolute', float: 'left', top: 0, }}>
               <h3 style={{
@@ -20,21 +14,25 @@ const Gallery = () => {
                 padding: "10px 15px",
                 fontSize: '14px',
                 color: 'white',
-                fontWeight: 700
-              }}>Video Gallery</h3>
-              <a style={{
+                display: 'inline-block'
+              }}><a style={{ textDecoration: 'none', color: 'white', }}
+                class="bttn-more bttn-view" href="/en/media/video-gallery" title="View All About video">
+                  <span>Video Gallery</span>
+                </a></h3>
+              <h3 style={{
                 backgroundColor: '#454545',
                 textTransform: 'uppercase',
                 padding: "10px 15px",
                 fontSize: '14px',
                 color: 'white',
-                fontWeight: 700,
-                display: 'inline-block'
-
-              }}
-                class="bttn-more bttn-view" href="/en/media/video-gallery" title="View All About video">
-                <span>View All</span>
-              </a>
+                display: 'inline-block',
+                textDecoration: 'none'
+              }}>
+                <a style={{ textDecoration: 'none', color: 'white', }}
+                  class="bttn-more bttn-view" href="/en/media/video-gallery" title="View All About video">
+                  <span>View All</span>
+                </a>
+              </h3>
             </div>
 
             <img
@@ -49,8 +47,36 @@ const Gallery = () => {
         {/* Photo Gallery */}
         <div className="col-md-7 col-xs-12 col-sm-12 row" style={{ border: '1px solid blue' }}>
 
+
           {/* gallery carousel */}
-          <div className='col-md-9 col-xs-12' >
+          <div className='col-md-9 col-xs-12' style={{ position: 'relative', }}>
+            <div style={{ position: 'absolute', float: 'left', top: 0, zIndex: 9999 }}>
+              <h3 style={{
+                backgroundColor: '#E22D15',
+                textTransform: 'uppercase',
+                padding: "10px 15px",
+                fontSize: '14px',
+                color: 'white',
+                display: 'inline-block'
+              }}><a style={{ textDecoration: 'none', color: 'white', }}
+                class="bttn-more bttn-view" href="/en/media/video-gallery" title="View All About video">
+                  <span>Photo Gallery</span>
+                </a></h3>
+              <h3 style={{
+                backgroundColor: '#454545',
+                textTransform: 'uppercase',
+                padding: "10px 15px",
+                fontSize: '14px',
+                color: 'white',
+                display: 'inline-block',
+                textDecoration: 'none'
+              }}>
+                <a style={{ textDecoration: 'none', color: 'white', }}
+                  class="bttn-more bttn-view" href="/en/media/video-gallery" title="View All About video">
+                  <span>View All</span>
+                </a>
+              </h3>
+            </div>
             <div id="galleryCarousel" className="carousel slide" data-bs-ride="carousel">
               <div className="carousel-inner">
                 <div className="carousel-item active">
