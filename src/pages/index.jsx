@@ -32,38 +32,6 @@ const BANNER_QUERY = gql`
     }
   }
 `;
-const History_Query = gql`
-{
-  pages {
-    edges {
-      node {
-        homePage {
-         historyText
-          historyImage {
-            mediaItemUrl
-          }
-        }
-      }
-    }
-  }
-}`
-
-const Mission_Query = gql`
-{
-  pages {
-    edges {
-      node {
-        homePage {
-         missionText
-          missionImage {
-            mediaItemUrl
-          }
-        }
-      }
-    }
-  }
-}
-`
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -74,16 +42,7 @@ export default function Home() {
     return res;
   });
 
-  const { data: history } = useQuery("pages", async () => {
-    const res = await request(endpoint, History_Query)
-    return res;
-  });
-
-  const { data: mission } = useQuery("mission", async () => {
-    const res = await request(endpoint, Mission_Query)
-    return res;
-  })
-
+ 
   //   if (isLoading) return "Loading...";
   //   if (error) return <pre>{error.message}</pre>;
   return (
