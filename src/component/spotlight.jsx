@@ -1,6 +1,6 @@
 const Spotlight = () => {
   return (
-    <div className="bg-wrapper top-bg-wrapper gray-bg padding-top-bott">
+    <div className="bg-wrapper top-bg-wrapper gray-bg padding-top-bott my-5">
       <div className="container common-container four_content body-container top-body-container padding-top-bott2" role="complementary">
         <div className="row">
           <div className="col-md-8">

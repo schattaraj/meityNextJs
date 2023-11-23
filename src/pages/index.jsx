@@ -9,7 +9,7 @@ import { useQuery } from "react-query";
 import { useEffect, useState } from 'react';
 import Spotlight from '@/component/spotlight';
 
-const endpoint = "http://localhost/wordpress/graphql/";
+const endpoint = process.env.NEXT_PUBLIC_BASE_URL;
 
 const BANNER_QUERY = gql`
   {
@@ -81,9 +81,6 @@ export default function Home() {
     const res = await request(endpoint, Mission_Query)
     return res;
   })
-
-  console.log("data", banner)
-  console.log("historyData", history)
 
   //   if (isLoading) return "Loading...";
   //   if (error) return <pre>{error.message}</pre>;

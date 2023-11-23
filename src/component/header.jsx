@@ -1,7 +1,7 @@
 import { request, gql } from "graphql-request";
 import { useQuery } from "react-query";
 import Link from "next/link"
-const endpoint = "http://localhost/wordpress/graphql/";
+const endpoint = process.env.NEXT_PUBLIC_BASE_URL;
 const Logo_Query = gql`{
   pages{
     edges{
@@ -39,20 +39,14 @@ return <>
 </span>
 </div>
 <div className="tophead_right">
-<a href="#main-content" className="loginlinks skip-link">Skip to main content</a>
-<a href="https://www.india.gov.in/user/login" className="loginlinks">Sign In</a>
-<a href="https://www.india.gov.in/user/register" className="loginlinks">Register</a>
+<a href="#main-content" className="loginlinks skip-link">Scip to main content</a>
+<a href="#main-content" className="loginlinks skip-link">Screen Reader Access</a>
+<a href="https://www.india.gov.in/user/login" className="loginlinks">Search</a>
+<a href="https://www.india.gov.in/user/login" className="loginlinks">Sitemap</a>
+<a href="https://www.india.gov.in/user/login" className="loginlinks">Language</a>
 			
-<span className="sizechanger">
-<a id="text_resize_decrease" className="changer" href="javascript:;" onclick="set_font_size('decrease')" title="Decrease font size" role="link">-A</a>
-<a id="text_resize_reset" className="changer" onclick="set_font_size('')" href="javascript:;" title="Reset font size" role="link">A</a>
-<a id="text_resize_increase" className="changer" onclick="set_font_size('increase')" href="javascript:;" title="Increase font size" role="link">+A</a>
-</span>
-<span className="colorchanger">
-<a href="javascript:void(0);" onclick="chooseStyle('none', 60);" role="link" aria-label="" title="Normal Contrast">A</a>
-<a href="javascript:void(0);" className="blackbg" onclick="chooseStyle('change', 60);" role="link" aria-label="" title="High Contrast">A</a>
-</span>
-<a href="https://www.xn--i1bj3fqcyde.xn--11b7cb3a6a.xn--h2brj9c/" className="alink" id="switch-lang" title="Change Language हिन्दी" aria-label="Change Language हिन्दी" rel="हिन्दी">हिन्दी</a>   
+
+{/* <a href="https://www.xn--i1bj3fqcyde.xn--11b7cb3a6a.xn--h2brj9c/" className="alink" id="switch-lang" title="Change Language हिन्दी" aria-label="Change Language हिन्दी" rel="हिन्दी">हिन्दी</a>    */}
 </div></div>
   </div></div></div></div>		</div>
 	</section>
@@ -81,9 +75,41 @@ return <>
 <section className="bottom_header">
 <div className="wrapper">
   <ul className="menus">
+    <li>
+      <Link href={"/"}>
+        <img src="/images/home.svg" alt="" />
+      </Link>
+    </li>
 <li>
-  <Link href={"#"}></Link>
-</li>
+  <Link href={"#"}>Dashboard <span class="indicator">+</span></Link>
+  <ul className="submenu">
+        <li><Link href={"#"}>NAPS</Link></li>
+        <li><Link href={"#"}>PMKVY</Link></li>
+      </ul>
+  </li>
+  <li><Link href={"#"}>About MSDE <span class="indicator">+</span></Link>
+  <ul className="submenu">
+        <li><Link href={"#"}>About MSDE</Link></li>
+        <li><Link href={"#"}>Background</Link></li>
+        <li><Link href={"#"}>Allocation of Business Rules</Link></li>
+        <li><Link href={"#"}>Acts & Rules</Link></li>
+        <li><Link href={"#"}>Citizen Charter</Link></li>
+        <li><Link href={"#"}>Organizations Structure</Link></li>
+        <li><Link href={"#"}>Important Days</Link></li>
+        <li><Link href={"#"}>Who's who</Link></li>
+  </ul>
+  </li>
+  <li><Link href={"#"}>Minister</Link></li>
+  <li><Link href={"#"}>Organizations <span class="indicator">+</span></Link>
+  <ul className="submenu">
+        <li><Link href={"#"}>Directorate General of Training(DGT)</Link></li>
+        <li><Link href={"#"}>Directorate of Jan Skhikshan Sansthan(DJSS)</Link></li>
+        <li><Link href={"#"}>National Council for Vocational Education and Training(NSDC)</Link></li>
+  </ul>
+  </li>
+  <li><Link href={"#"}>Schemes & Initiatives <span class="indicator">+</span></Link></li>
+  <li><Link href={"#"}>Report/Documents <span class="indicator">+</span></Link></li>
+
   </ul>
 </div>
 </section>
