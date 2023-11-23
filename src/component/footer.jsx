@@ -1,7 +1,7 @@
 import { request, gql } from "graphql-request";
 import { useQuery } from "react-query";
 
-const endpoint = "http://localhost/wordpress/graphql/";
+const endpoint = process.env.NEXT_PUBLIC_BASE_URL;
 const Logo_Query = gql`{
   pages{
     edges{

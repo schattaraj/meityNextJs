@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import style from "./documentsTab.style.module.css";
+import { MdArrowRightAlt } from "react-icons/md";
 import Image from "next/image";
 
 const TabData = ({ data }) => {
@@ -8,7 +9,7 @@ const TabData = ({ data }) => {
       {data?.map((ele, idx) => {
         console.log("eeeeeeeee", ele);
         return (
-          <p key={idx} className={style.text}>
+          <div key={idx} className={style.text}>
             <Image
               src="/images/arrow-right-2.png"
               alt=""
@@ -16,6 +17,7 @@ const TabData = ({ data }) => {
               height="50"
             />
             <span>{ele?.text}</span>
+            <br/>
             &nbsp;
             {ele?.file && (
               <>
@@ -25,11 +27,12 @@ const TabData = ({ data }) => {
                 </a>
               </>
             )}
-          </p>
+            {idx < data.length-1 && <div className={style.divider}/>}
+          </div>
         );
       })}
       <div className={style.readMore}>
-        Read More
+        Read More <MdArrowRightAlt />
       </div>
     </div>
   );

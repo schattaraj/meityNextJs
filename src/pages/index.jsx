@@ -8,10 +8,11 @@ import { request, gql } from "graphql-request";
 import { useQuery } from "react-query";
 import { useEffect, useState } from 'react';
 import Spotlight from '@/component/spotlight';
+import Gallery from '@/component/gallery';
 import SocialFeed from '@/component/socialFeeds';
 import DocumentsTab from '@/component/documentsTab/documentsTab';
 
-const endpoint = "http://localhost/wordpress/graphql/";
+const endpoint = process.env.NEXT_PUBLIC_BASE_URL;
 
 const BANNER_QUERY = gql`
   {
@@ -32,38 +33,6 @@ const BANNER_QUERY = gql`
     }
   }
 `;
-const History_Query = gql`
-{
-  pages {
-    edges {
-      node {
-        homePage {
-         historyText
-          historyImage {
-            mediaItemUrl
-          }
-        }
-      }
-    }
-  }
-}`
-
-const Mission_Query = gql`
-{
-  pages {
-    edges {
-      node {
-        homePage {
-         missionText
-          missionImage {
-            mediaItemUrl
-          }
-        }
-      }
-    }
-  }
-}
-`
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -73,19 +42,6 @@ export default function Home() {
     const res = await request(endpoint, BANNER_QUERY);
     return res;
   });
-
-  const { data: history } = useQuery("pages", async () => {
-    const res = await request(endpoint, History_Query)
-    return res;
-  });
-
-  const { data: mission } = useQuery("mission", async () => {
-    const res = await request(endpoint, Mission_Query)
-    return res;
-  })
-
-  console.log("data", banner)
-  console.log("historyData", history)
 
   //   if (isLoading) return "Loading...";
   //   if (error) return <pre>{error.message}</pre>;
@@ -107,11 +63,12 @@ export default function Home() {
               </Carousel.Item>
             })
           }
-    </Carousel>
-    </div>
+        </Carousel>
+      </div>
       <Spotlight />
+      <Gallery />
       <DocumentsTab />
-      <SocialFeed/>
+      <SocialFeed />
       <Footer />
     </>
   )
