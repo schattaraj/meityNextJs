@@ -1,6 +1,6 @@
 import { request, gql } from "graphql-request";
 import { useQuery } from "react-query";
-
+import Link from "next/link"
 const endpoint = "http://localhost/wordpress/graphql/";
 const Logo_Query = gql`{
   pages{
@@ -78,7 +78,15 @@ return <>
   </div>
   	</div>
 	</section>
-
+<section className="bottom_header">
+<div className="wrapper">
+  <ul className="menus">
+<li>
+  <Link href={"#"}></Link>
+</li>
+  </ul>
+</div>
+</section>
   
 </>
 }
