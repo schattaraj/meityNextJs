@@ -25,7 +25,12 @@ export default function Header(){
     return res;
   })
   const toggleMenu = ()=>{
-    
+    if(showMenu){
+      setShowMenu(false)
+    }
+    else{
+      setShowMenu(true)
+    }
   }
 return <>
 <section className="top_head">
@@ -72,13 +77,13 @@ return <>
               <a href="https://www.g20.org/en/" target="_blank" class="g20" rel="noopener noreferrer"><img class="national_emblem" src="/images/G20_logo.png" alt="G20" style={{height: "73px"}}/></a>
               <a class="sw-logo1" target="_blank" href="https://www.skillindia.gov.in/" title="Skill India, External link that open in a new windows " rel="noopener noreferrer"><img src="/images/skill-india.png" alt="Skill India"/></a>
             </div>
-        <button className="toggle-bar"></button>
+        <button className={showMenu ? "toggle-bar cross" : "toggle-bar"} onClick={toggleMenu}></button>
 			              {/* <a className="mobileNav" aria-label="Mobile Menu" title="Mobile Menu" href="javascript:;"><span></span><span></span><span></span></a> */}
 		
   </div>
   	</div>
 	</section>
-<section className="bottom_header">
+<section className={showMenu ? "bottom_header active" : "bottom_header"}>
 <div className="wrapper">
   <ul className="menus">
     <li>

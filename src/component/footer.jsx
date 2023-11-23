@@ -28,42 +28,32 @@ export default function Footer() {
     <footer>
     <div className="top">
     <div className="container">
-    <div className="row">
-    <div className="col-lg-5">
-    <Link href="#" className="footer-logo"><img src={logo?.pages?.edges[0]?.node?.homePage.logo.mediaItemUrl} alt="Emblam"/> </Link>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe at rerum eveniet explicabo, qui a?</p>
-    </div>
-    <div className="col-lg-3">
-    <div className="quick-links">
-    <h3>Quick Links</h3>
-    <Link href="#">About Us</Link>
-    <Link href="#">Division</Link>
-    <Link href="#">Organisations</Link>
-    <Link href="#">RTI</Link>
-    <Link href="#">Notifications</Link>
-    </div>
-    </div>
-    <div className="col-lg-4">
-    <h3>Contact Us</h3>
-    <h4>
-    <span>Electronics Niketan, 6, CGO Complex</span></h4>
-    <h4>
-    <Link href="tel:8866000011">
-    <span>+91-11-24361756</span>
-    </Link>
-    </h4>
-    <h4>
-    <Link href="mailto:sdas">
-    <span>webmaster@meity.gov.in</span>
-    </Link>
-    </h4>
-    </div>
-    </div>
-    </div>
-    </div>
-    <div className="copy-right">
-    <div className="container">
-    <p>© <span id="year">2023</span> NextJs / All Rights Reserved</p>
+    <ul className="">
+                    <li className="menu-item">
+        <a href="/en/related-links" title="Related Links" data-drupal-link-system-path="node/894">Related Links</a>
+              </li>
+                <li className="menu-item">
+        <a href="/en/contact-us" title="Contact Us" data-drupal-link-system-path="node/1237">Contact Us</a>
+              </li>
+                <li className="menu-item">
+        <a href="/en/website-policies" title="Website Policies" data-drupal-link-system-path="node/4">Website Policies</a>
+              </li>
+                <li className="menu-item">
+        <a href="/en/Terms-and-Conditions" title="Terms and Conditions" data-drupal-link-system-path="node/997">Terms and Conditions</a>
+              </li>
+                <li className="menu-item">
+        <a href="/en/Web-Information-Manager" title="Web Information Manager" data-drupal-link-system-path="node/1057">Web Information Manager</a>
+              </li>
+                <li className="menu-item">
+        <a href="/en/feedback" title="Feedback" data-drupal-link-system-path="webform/feedback">Feedback</a>
+              </li>
+                <li className="menu-item">
+        <a href="/en/public-opinion" title="public-opinion" data-drupal-link-system-path="node/1366">Public Opinion</a>
+              </li>
+                <li className="menu-item">
+        <a href="/en/screen-reader" title="Help" data-drupal-link-system-path="node/1367">Help</a>
+              </li>
+        </ul>
     </div>
     </div>
     </footer>

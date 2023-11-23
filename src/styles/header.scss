@@ -244,10 +244,22 @@ justify-content: space-between;
     position: relative;
     display: none;
     &:after{
-      @include overlay($t:0,$l:0,$w:100%,$h:3px,$b:auto,$r:auto,$bg:#777,$op:1)
+      @include overlay($t:0,$l:0,$w:100%,$h:3px,$b:auto,$r:auto,$bg:#777,$op:1);
+      transition: all 0.4s;
     }
     &:before{
-      @include overlay($t:12px,$l:0,$w:100%,$h:3px,$b:auto,$r:auto,$bg:#777,$op:1)
+      @include overlay($t:12px,$l:0,$w:100%,$h:3px,$b:auto,$r:auto,$bg:#777,$op:1);
+      transition: all 0.4s;
+    }
+    &.cross{
+      border:none;
+      &::before{
+        transform: rotate(-45deg);
+      }
+      &::after{
+        top: 12px;
+        transform: rotate(45deg);
+      }
     }
   }
 }

@@ -45,7 +45,7 @@ const Gallery = () => {
         </div>
 
         {/* Photo Gallery */}
-        <div className="col-md-7 col-xs-12 col-sm-12 row" style={{ border: '1px solid blue' }}>
+        <div className="col-md-7 col-xs-12 col-sm-12 row" >
 
 
           {/* gallery carousel */}

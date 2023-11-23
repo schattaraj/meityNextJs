@@ -24,7 +24,7 @@ const ABOUT_QUERY = gql`
 const Spotlight = () => {
 
 
-  const { data: about, isLoading, error } = useQuery("posts", async () => {
+  const { data: about } = useQuery("about", async () => {
     const res = await request(endpoint, ABOUT_QUERY);
     return res;
   });
