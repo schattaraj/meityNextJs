@@ -1,4 +1,34 @@
+import { request, gql } from "graphql-request";
+import { useQuery } from "react-query";
+
+const endpoint = process.env.NEXT_PUBLIC_BASE_URL;
+
+const ABOUT_QUERY = gql`
+{
+  pages{
+    edges{
+      node{
+        homePage{
+         	homeAboutTitle
+          homeAboutDetails
+          aboutImage{
+            sourceUrl
+          }
+        }
+      }
+    }
+  }
+}
+`;
+
 const Spotlight = () => {
+
+
+  const { data: about, isLoading, error } = useQuery("posts", async () => {
+    const res = await request(endpoint, ABOUT_QUERY);
+    return res;
+  });
+
   return (
     <div className="bg-wrapper top-bg-wrapper gray-bg padding-top-bott my-5">
       <div className="container common-container four_content body-container top-body-container padding-top-bott2" role="complementary">
@@ -6,17 +36,10 @@ const Spotlight = () => {
           <div className="col-md-8">
             <div className="d-flex flex-column justify-content-center h-100">
               <h2 className="mb-4" style={{ fontSize: '21px' }}>
-                <em>Welcome to</em> <span style={{ color: '#E22D15' }}>Ministry of Skill Development and Entrepreneurship</span>
+                {about && <><span style={{ color: '#E22D15' }}>{about.pages.edges[0].node.homePage.homeAboutTitle}</span></>}
               </h2>
               <p className="mb-4" style={{ fontSize: '17px' }}>
-                The Ministry is responsible for co-ordination of all Skill Development efforts across the country,
-                removal of disconnect between demand and supply of skilled manpower, building the vocational and
-                technical training framework, skill up-gradation, building of new skills and innovative
-                thinking not only for existing jobs but also jobs that are to be created.
-              </p>
-              <p style={{ fontSize: '17px' }}>
-                The Ministry aims to skill on a large scale with speed and high standards in order to achieve
-                its vision of a 'Skilled India'.
+                {about && about.pages.edges[0].node.homePage.homeAboutDetails}
               </p>
             </div>
           </div>
