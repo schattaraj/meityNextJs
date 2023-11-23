@@ -1,6 +1,7 @@
 import { request, gql } from "graphql-request";
 import { useQuery } from "react-query";
 import Link from "next/link"
+import { useState } from "react";
 const endpoint = process.env.NEXT_PUBLIC_BASE_URL;
 const Logo_Query = gql`{
   pages{
@@ -18,10 +19,14 @@ const Logo_Query = gql`{
 `
 
 export default function Header(){
+  const [showMenu,setShowMenu] = useState(false)
   const {data:logo} = useQuery("logo",async()=>{
     const res = await request(endpoint, Logo_Query)
     return res;
   })
+  const toggleMenu = ()=>{
+
+  }
 return <>
 <section className="top_head">
 		<div className="wrapper">
@@ -67,6 +72,7 @@ return <>
               <a href="https://www.g20.org/en/" target="_blank" class="g20" rel="noopener noreferrer"><img class="national_emblem" src="/images/G20_logo.png" alt="G20" style={{height: "73px"}}/></a>
               <a class="sw-logo1" target="_blank" href="https://www.skillindia.gov.in/" title="Skill India, External link that open in a new windows " rel="noopener noreferrer"><img src="/images/skill-india.png" alt="Skill India"/></a>
             </div>
+        <button className="toggle-bar"></button>
 			              {/* <a className="mobileNav" aria-label="Mobile Menu" title="Mobile Menu" href="javascript:;"><span></span><span></span><span></span></a> */}
 		
   </div>
