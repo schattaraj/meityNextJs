@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-// import styles from '@/styles/Home.module.css'
 import Header from '@/component/header'
 import Carousel from 'react-bootstrap/Carousel';
 import Footer from '@/component/footer';
@@ -9,6 +8,7 @@ import { request, gql } from "graphql-request";
 import { useQuery } from "react-query";
 import { useEffect, useState } from 'react';
 import Spotlight from '@/component/spotlight';
+import SocialFeed from '@/component/socialFeeds';
 
 const endpoint = "http://localhost/wordpress/graphql/";
 
@@ -106,37 +106,10 @@ export default function Home() {
               </Carousel.Item>
             })
           }
-
-          {/* <Carousel.Item>
-      <img typeof="foaf:Image" src="/images/juGajmc1gOVBUtt5.jpeg"  alt="Call for Application for the Global AI Expo" title="Call for Application for the Global AI Expo"/>
-        
-        
-      </Carousel.Item>
-      <Carousel.Item>
-      <img typeof="foaf:Image" src="/images/Genesis Banner (MeitY Website).png"  alt="Call for Application for the Global AI Expo" title="Call for Application for the Global AI Expo"/>
-      
-      </Carousel.Item> */}
-        </Carousel>
-      </div>
-      {/* <h1>Posts</h1>
-      <ul>
-        {data.posts.edges.map((edge) => (
-          <li key={edge.node.title}>
-            <h3>{edge.node.title}</h3>
-            <p>{edge.node.content}</p>
-            </li>
-        ))}
-      </ul> */}
-      <div className="information">
-        <div className="row">
-          <div className="col-md-4">
-
-          </div>
-          <div className="col-md-5"></div>
-          <div className="col-md-3"></div>
-        </div>
-      </div>
+    </Carousel>
+    </div>
       <Spotlight />
+      <SocialFeed/>
       <Footer />
     </>
   )
