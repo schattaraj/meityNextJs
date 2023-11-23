@@ -1,13 +1,13 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-// import styles from '@/styles/Home.module.css'
 import Header from '@/component/header'
 import Carousel from 'react-bootstrap/Carousel';
 import Footer from '@/component/footer';
 import { request, gql } from "graphql-request";
 import { useQuery } from "react-query";
 import { useEffect, useState } from 'react';
+import Spotlight from '@/component/spotlight';
 
 const endpoint = "http://localhost/wordpress/graphql/";
 
@@ -66,27 +66,27 @@ const Mission_Query = gql`
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
-  const [state,setState] = useState(false) 
-    const { data:banner, isLoading, error } = useQuery("posts", async() => {
-      const res = await request(endpoint, BANNER_QUERY);
-      return res;
-    });
+  const [state, setState] = useState(false)
+  const { data: banner, isLoading, error } = useQuery("posts", async () => {
+    const res = await request(endpoint, BANNER_QUERY);
+    return res;
+  });
 
-  const { data:history } = useQuery("pages", async() => {
+  const { data: history } = useQuery("pages", async () => {
     const res = await request(endpoint, History_Query)
     return res;
   });
 
-  const {data:mission} = useQuery("mission",async()=>{
+  const { data: mission } = useQuery("mission", async () => {
     const res = await request(endpoint, Mission_Query)
     return res;
   })
-  
-  console.log("data",banner)
-console.log("historyData",history)
 
-//   if (isLoading) return "Loading...";
-//   if (error) return <pre>{error.message}</pre>;
+  console.log("data", banner)
+  console.log("historyData", history)
+
+  //   if (isLoading) return "Loading...";
+  //   if (error) return <pre>{error.message}</pre>;
   return (
     <>
       <Head>
@@ -95,74 +95,20 @@ console.log("historyData",history)
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-    <Header/>
-    <div className="banner1">
-    <Carousel>
-      {
-      banner && banner?.pages?.edges[0]?.node?.homePage?.bannerDetails?.map((item,index)=>{
-          return  <Carousel.Item key={index}>
-          <img typeof="foaf:Image" src={item.bannerImage.mediaItemUrl}/>
-          </Carousel.Item>
-        })
-      }
-     
-      {/* <Carousel.Item>
-      <img typeof="foaf:Image" src="/images/juGajmc1gOVBUtt5.jpeg"  alt="Call for Application for the Global AI Expo" title="Call for Application for the Global AI Expo"/>
-        
-        
-      </Carousel.Item>
-      <Carousel.Item>
-      <img typeof="foaf:Image" src="/images/Genesis Banner (MeitY Website).png"  alt="Call for Application for the Global AI Expo" title="Call for Application for the Global AI Expo"/>
-      
-      </Carousel.Item> */}
+      <Header />
+      <div className="banner1">
+        <Carousel>
+          {
+            banner && banner?.pages?.edges[0]?.node?.homePage?.bannerDetails?.map((item, index) => {
+              return <Carousel.Item key={index}>
+                <img typeof="foaf:Image" src={item.bannerImage.mediaItemUrl} />
+              </Carousel.Item>
+            })
+          }
     </Carousel>
     </div>
-    {/* <h1>Posts</h1>
-      <ul>
-        {data.posts.edges.map((edge) => (
-          <li key={edge.node.title}>
-            <h3>{edge.node.title}</h3>
-            <p>{edge.node.content}</p>
-            </li>
-        ))}
-      </ul> */}
-    <div className="information">
-      <div className="container">
-      <div className="row">
-        <div className="col-md-4">
-          <div className="content">
-            <h3 className="heading">News Highlights</h3>
-            <div className="card">
-              <ul>
-                <li>E-Commerce cargo movement sets course for Ganga (NW 1) as...</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div className="col-md-5">
-          <div className="content">
-            <h3 className="heading">Most Requested Information & Forms</h3>
-            <div className="card">
-              <ul>
-                <li>E-Commerce cargo movement sets course for Ganga (NW 1) as...</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div className="col-md-3">
-          <div className="content">
-            <h3 className="heading">Activities & Initiatives</h3>
-            <div className="card">
-              <ul>
-                <li>E-Commerce cargo movement sets course for Ganga (NW 1) as...</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>
-    </div>
-    <Footer/>
+      <Spotlight />
+      <Footer />
     </>
   )
 }
