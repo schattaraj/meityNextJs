@@ -8,6 +8,7 @@ import { request, gql } from "graphql-request";
 import { useQuery } from "react-query";
 import { useEffect, useState } from 'react';
 import Spotlight from '@/component/spotlight';
+import Gallery from '@/component/gallery';
 
 const endpoint = "http://localhost/wordpress/graphql/";
 
@@ -105,9 +106,10 @@ export default function Home() {
               </Carousel.Item>
             })
           }
-    </Carousel>
-    </div>
+        </Carousel>
+      </div>
       <Spotlight />
+      <Gallery />
       <Footer />
     </>
   )
