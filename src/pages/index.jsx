@@ -9,6 +9,7 @@ import { useQuery } from "react-query";
 import { useEffect, useState } from 'react';
 import Spotlight from '@/component/spotlight';
 import SocialFeed from '@/component/socialFeeds';
+import DocumentsTab from '@/component/documentsTab/documentsTab';
 
 const endpoint = "http://localhost/wordpress/graphql/";
 
@@ -109,6 +110,7 @@ export default function Home() {
     </Carousel>
     </div>
       <Spotlight />
+      <DocumentsTab />
       <SocialFeed/>
       <Footer />
     </>
