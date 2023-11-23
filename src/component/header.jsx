@@ -25,7 +25,7 @@ export default function Header(){
     return res;
   })
   const toggleMenu = ()=>{
-
+    
   }
 return <>
 <section className="top_head">
