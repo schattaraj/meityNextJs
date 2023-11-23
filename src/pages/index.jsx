@@ -37,12 +37,11 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   const [state, setState] = useState(false)
-  const { data: banner, isLoading, error } = useQuery("posts", async () => {
+  const { data: banner } = useQuery("posts", async () => {
     const res = await request(endpoint, BANNER_QUERY);
     return res;
   });
 
- 
   //   if (isLoading) return "Loading...";
   //   if (error) return <pre>{error.message}</pre>;
   return (
@@ -67,7 +66,7 @@ export default function Home() {
       </div>
       <Spotlight />
       <Gallery />
-      <SocialFeed/>
+      <SocialFeed />
       <Footer />
     </>
   )
