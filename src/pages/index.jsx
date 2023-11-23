@@ -10,6 +10,7 @@ import { useEffect, useState } from 'react';
 import Spotlight from '@/component/spotlight';
 import Gallery from '@/component/gallery';
 import SocialFeed from '@/component/socialFeeds';
+import DocumentsTab from '@/component/documentsTab/documentsTab';
 
 const endpoint = process.env.NEXT_PUBLIC_BASE_URL;
 
@@ -66,6 +67,7 @@ export default function Home() {
       </div>
       <Spotlight />
       <Gallery />
+      <DocumentsTab />
       <SocialFeed />
       <Footer />
     </>
