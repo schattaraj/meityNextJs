@@ -2,7 +2,7 @@ import React from 'react';
 
 const Gallery = () => {
   return (
-    <div className="container common-container four_content gallery-container" role="complementary">
+    <div className="container common-container four_content gallery-container gap" role="complementary">
       <div className="row">
         {/* Video Gallery */}
         <div className="col-md-5 col-xs-12 col-sm-12">
@@ -16,7 +16,7 @@ const Gallery = () => {
                 color: 'white',
                 display: 'inline-block'
               }}><a style={{ textDecoration: 'none', color: 'white', }}
-                class="bttn-more bttn-view" href="/en/media/video-gallery" title="View All About video">
+                className="bttn-more bttn-view" href="/en/media/video-gallery" title="View All About video">
                   <span>Video Gallery</span>
                 </a></h3>
               <h3 style={{
@@ -29,7 +29,7 @@ const Gallery = () => {
                 textDecoration: 'none'
               }}>
                 <a style={{ textDecoration: 'none', color: 'white', }}
-                  class="bttn-more bttn-view" href="/en/media/video-gallery" title="View All About video">
+                  className="bttn-more bttn-view" href="/en/media/video-gallery" title="View All About video">
                   <span>View All</span>
                 </a>
               </h3>
@@ -59,7 +59,7 @@ const Gallery = () => {
                 color: 'white',
                 display: 'inline-block'
               }}><a style={{ textDecoration: 'none', color: 'white', }}
-                class="bttn-more bttn-view" href="/en/media/video-gallery" title="View All About video">
+                className="bttn-more bttn-view" href="/en/media/video-gallery" title="View All About video">
                   <span>Photo Gallery</span>
                 </a></h3>
               <h3 style={{
@@ -72,7 +72,7 @@ const Gallery = () => {
                 textDecoration: 'none'
               }}>
                 <a style={{ textDecoration: 'none', color: 'white', }}
-                  class="bttn-more bttn-view" href="/en/media/video-gallery" title="View All About video">
+                  className="bttn-more bttn-view" href="/en/media/video-gallery" title="View All About video">
                   <span>View All</span>
                 </a>
               </h3>

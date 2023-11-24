@@ -53,7 +53,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <div className="banner1">
+      <div className="banner1 gap">
         <Carousel>
           {banner &&
             banner?.pages?.edges[0]?.node?.homePage?.bannerDetails?.map(

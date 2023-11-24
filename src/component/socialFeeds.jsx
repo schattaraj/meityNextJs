@@ -354,7 +354,7 @@ const SocialFeed = () => {
                   tabIndex={-1}
                   role="application"
                   preload="metadata"
-                  muted="muted"
+                  muted={true}
                   src="https://dms.licdn.com/playlist/C5605AQEXShZvXsuHLw/mp4-720p-30fp-crf28/0/1651127414396?e=1652166000&v=beta&t=AqObNPIQPKiAQc19QlNQ7K3FvevLQFwDp6qCq74Yu1M"
                   autoPlay="autoplay"
                 />
@@ -509,7 +509,7 @@ const SocialFeed = () => {
                   tabIndex={-1}
                   role="application"
                   preload="metadata"
-                  muted="muted"
+                  muted={true}
                   src="https://dms.licdn.com/playlist/C5605AQEXShZvXsuHLw/mp4-720p-30fp-crf28/0/1651127414396?e=1652166000&v=beta&t=AqObNPIQPKiAQc19QlNQ7K3FvevLQFwDp6qCq74Yu1M"
                   autoPlay="autoplay"
                 />

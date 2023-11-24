@@ -30,7 +30,7 @@ const Spotlight = () => {
   });
 
   return (
-    <div className="bg-wrapper top-bg-wrapper gray-bg padding-top-bott my-5">
+    <div className="bg-wrapper top-bg-wrapper gray-bg padding-top-bott gap">
       <div className="container common-container four_content body-container top-body-container padding-top-bott2" role="complementary">
         <div className="row">
           <div className="col-md-8">
@@ -56,7 +56,7 @@ const Spotlight = () => {
                               display: ' flex',
                               justifyContent: 'center'
                             }}>
-                            <ul>
+                            <ul className="p-0">
                               <li className="minister-list" style={{
                                 display: ' flex',
                                 justifyContent: 'center',
