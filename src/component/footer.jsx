@@ -19,14 +19,72 @@ const Logo_Query = gql`{
 
 import Link from "next/link"
 export default function Footer() {
-    const {data:logo} = useQuery("logo",async()=>{
-        const res = await request(endpoint, Logo_Query)
-        return res;
-      })
+  const { data: logo } = useQuery("logo", async () => {
+    const res = await request(endpoint, Logo_Query)
+    return res;
+  })
+
   return (
     <>
-    <footer>
-    <div className="top">
+      <footer >
+        <div className="container">
+          <nav
+            role="navigation"
+            id="block-msde-footer"
+          >
+            <ul className="list-unstyled">
+              <li className="menu-item">
+                <a href="/en/related-links" title="Related Links" >
+                  Related Links
+                </a>
+              </li>
+
+              <li className="menu-item">
+                <a href="/en/contact-us" title="Contact Us" >
+                  Contact Us
+                </a>
+              </li>
+
+              <li className="menu-item">
+                <a href="/en/website-policies" title="Website Policies" >
+                  Website Policies
+                </a>
+              </li>
+
+              <li className="menu-item">
+                <a href="/en/Terms-and-Conditions" title="Terms and Conditions" >
+                  Terms and Conditions
+                </a>
+              </li>
+
+              <li className="menu-item">
+                <a href="/en/Web-Information-Manager" title="Web Information Manager" >
+                  Web Information Manager
+                </a>
+              </li>
+
+              <li className="menu-item">
+                <a href="/en/feedback" title="Feedback" >
+                  Feedback
+                </a>
+              </li>
+
+              <li className="menu-item">
+                <a href="/en/public-opinion" title="public-opinion" data-drupal-link-system-path="node/1366">
+                  Public Opinion
+                </a>
+              </li>
+
+              <li className="menu-item">
+                <a href="/en/screen-reader" title="Help" data-drupal-link-system-path="node/1367">
+                  Help
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        {/* <div className="top">
     <div className="container">
     <ul className="">
                     <li className="menu-item">
@@ -55,8 +113,8 @@ export default function Footer() {
               </li>
         </ul>
     </div>
-    </div>
-    </footer>
+    </div> */}
+      </footer>
     </>
   )
 }

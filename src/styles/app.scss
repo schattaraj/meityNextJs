@@ -249,3 +249,19 @@ img{
     width: auto;
 }
 }
+
+//footer
+.menu-item {
+    position: relative;
+    display: inline-block;
+    font-size: 14px;
+  }
+  
+  .menu-item::before {
+    content: '|';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    color: #0000ff; 
+  }
