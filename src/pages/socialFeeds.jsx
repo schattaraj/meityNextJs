@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import style from "./socialFeed.style.module.css";
+import style from "../styles/socialFeed.style.module.css";
 
 const SocialFeed = () => {
   return (
@@ -354,7 +354,7 @@ const SocialFeed = () => {
                   tabIndex={-1}
                   role="application"
                   preload="metadata"
-                  muted={true}
+                  muted="muted"
                   src="https://dms.licdn.com/playlist/C5605AQEXShZvXsuHLw/mp4-720p-30fp-crf28/0/1651127414396?e=1652166000&v=beta&t=AqObNPIQPKiAQc19QlNQ7K3FvevLQFwDp6qCq74Yu1M"
                   autoPlay="autoplay"
                 />
@@ -509,7 +509,7 @@ const SocialFeed = () => {
                   tabIndex={-1}
                   role="application"
                   preload="metadata"
-                  muted={true}
+                  muted="muted"
                   src="https://dms.licdn.com/playlist/C5605AQEXShZvXsuHLw/mp4-720p-30fp-crf28/0/1651127414396?e=1652166000&v=beta&t=AqObNPIQPKiAQc19QlNQ7K3FvevLQFwDp6qCq74Yu1M"
                   autoPlay="autoplay"
                 />

@@ -25,96 +25,42 @@ export default function Footer() {
   })
 
   return (
-    <>
-      <footer >
-        <div className="container">
-          <nav
-            role="navigation"
-            id="block-msde-footer"
-          >
-            <ul className="list-unstyled">
-              <li className="menu-item">
-                <a href="/en/related-links" title="Related Links" >
-                  Related Links
-                </a>
-              </li>
+    <footer>
+      <nav role="navigation" style={{ backgroundColor: '#555' }}>
+        <ul class="row flex-wrap">
+          <li class="col-md col-sm-4 col-xs-6 menu-item">
+            <a href="/en/related-links" title="Related Links">Related Links</a>
+          </li>
 
-              <li className="menu-item">
-                <a href="/en/contact-us" title="Contact Us" >
-                  Contact Us
-                </a>
-              </li>
+          <li class="col-md col-sm-4 col-xs-6 menu-item">
+            <a href="/en/contact-us" title="Contact Us">Contact Us</a>
+          </li>
 
-              <li className="menu-item">
-                <a href="/en/website-policies" title="Website Policies" >
-                  Website Policies
-                </a>
-              </li>
+          <li class="col-md col-sm-4 col-xs-6 menu-item">
+            <a href="/en/website-policies" title="Website Policies">Website Policies</a>
+          </li>
 
-              <li className="menu-item">
-                <a href="/en/Terms-and-Conditions" title="Terms and Conditions" >
-                  Terms and Conditions
-                </a>
-              </li>
+          <li class="col-md col-sm-4 col-xs-6 menu-item">
+            <a href="/en/Terms-and-Conditions" title="Terms and Conditions">Terms and Conditions</a>
+          </li>
 
-              <li className="menu-item">
-                <a href="/en/Web-Information-Manager" title="Web Information Manager" >
-                  Web Information Manager
-                </a>
-              </li>
+          <li class="col-md col-sm-4 col-xs-6 menu-item">
+            <a href="/en/Web-Information-Manager" title="Web Information Manager">Web Information Manager</a>
+          </li>
 
-              <li className="menu-item">
-                <a href="/en/feedback" title="Feedback" >
-                  Feedback
-                </a>
-              </li>
+          <li class="col-md col-sm-4 col-xs-6 menu-item">
+            <a href="/en/feedback" title="Feedback">Feedback</a>
+          </li>
 
-              <li className="menu-item">
-                <a href="/en/public-opinion" title="public-opinion" data-drupal-link-system-path="node/1366">
-                  Public Opinion
-                </a>
-              </li>
+          <li class="col-md col-sm-4 col-xs-6 menu-item">
+            <a href="/en/public-opinion" title="Public Opinion">Public Opinion</a>
+          </li>
 
-              <li className="menu-item">
-                <a href="/en/screen-reader" title="Help" data-drupal-link-system-path="node/1367">
-                  Help
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-
-        {/* <div className="top">
-    <div className="container">
-    <ul className="">
-                    <li className="menu-item">
-        <a href="/en/related-links" title="Related Links" data-drupal-link-system-path="node/894">Related Links</a>
-              </li>
-                <li className="menu-item">
-        <a href="/en/contact-us" title="Contact Us" data-drupal-link-system-path="node/1237">Contact Us</a>
-              </li>
-                <li className="menu-item">
-        <a href="/en/website-policies" title="Website Policies" data-drupal-link-system-path="node/4">Website Policies</a>
-              </li>
-                <li className="menu-item">
-        <a href="/en/Terms-and-Conditions" title="Terms and Conditions" data-drupal-link-system-path="node/997">Terms and Conditions</a>
-              </li>
-                <li className="menu-item">
-        <a href="/en/Web-Information-Manager" title="Web Information Manager" data-drupal-link-system-path="node/1057">Web Information Manager</a>
-              </li>
-                <li className="menu-item">
-        <a href="/en/feedback" title="Feedback" data-drupal-link-system-path="webform/feedback">Feedback</a>
-              </li>
-                <li className="menu-item">
-        <a href="/en/public-opinion" title="public-opinion" data-drupal-link-system-path="node/1366">Public Opinion</a>
-              </li>
-                <li className="menu-item">
-        <a href="/en/screen-reader" title="Help" data-drupal-link-system-path="node/1367">Help</a>
-              </li>
+          <li class="col-md col-sm-4 col-xs-6">
+            <a href="/en/screen-reader" title="Help">Help</a>
+          </li>
         </ul>
-    </div>
-    </div> */}
-      </footer>
-    </>
+      </nav>
+    </footer>
   )
 }

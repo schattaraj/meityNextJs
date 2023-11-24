@@ -7,7 +7,6 @@ const TabData = ({ data }) => {
   return (
     <div className={style.data_wrapper}>
       {data?.map((ele, idx) => {
-        console.log("eeeeeeeee", ele);
         return (
           <div key={idx} className={style.text}>
             <Image
