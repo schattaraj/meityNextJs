@@ -11,7 +11,13 @@ import Spotlight from '@/component/spotlight';
 import Gallery from '@/component/gallery';
 import SocialFeed from '@/component/socialFeeds';
 import DocumentsTab from '@/component/documentsTab/documentsTab';
-
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { FreeMode, Navigation, Thumbs } from "swiper/modules";
+import Link from "next/link"
+import 'swiper/css';
+import "swiper/css/free-mode";
+import "swiper/css/navigation";
+import {SLIDER_QUERY} from '@/component/query'
 const endpoint = process.env.NEXT_PUBLIC_BASE_URL;
 
 const BANNER_QUERY = gql`
@@ -43,6 +49,10 @@ export default function Home() {
     return res;
   });
 
+  const { data: sliders } = useQuery("sliders", async () => {
+    const res = await request(endpoint, SLIDER_QUERY);
+    return res;
+  });
   //   if (isLoading) return "Loading...";
   //   if (error) return <pre>{error.message}</pre>;
   return (
@@ -65,11 +75,49 @@ export default function Home() {
           }
         </Carousel>
       </div>
-      <Spotlight />
+      <Spotlight/>
       <Gallery />
       <DocumentsTab />
       <SocialFeed />
-      <Footer />
+      <div className="slider-area">
+      <div className="container">
+      <Swiper
+    spaceBetween={32}
+    breakpoints={{
+      400: {
+        slidesPerView: 3,
+      },
+      768: {
+        slidesPerView: 4,
+      },
+      1024: {
+        slidesPerView: 6,
+      },
+    }}
+    slidesPerView={2}
+    navigation={true}
+    modules={[FreeMode, Navigation, Thumbs]}
+    style={{
+      "--swiper-navigation-color": "rgba(0,0,0,0.8)",
+      "--swiper-pagination-color": "rgba(0,0,0,0.8)",
+      "--swiper-navigation-size":"30px",
+    }} 
+  >
+    {
+      sliders && sliders?.pages?.edges[0]?.node?.homePage?.sliders?.map((item, index) => {
+        return   <SwiperSlide key={"slider"+index}>
+        <div className="image">
+          <Link href={item?.pageLink} target='_blank'>
+        <img src={item?.sliderImage?.mediaItemUrl} alt="" />      
+        </Link>
+        </div>
+      </SwiperSlide>
+    })
+    }
+    </Swiper>
+      </div>
+    </div>
+      {/* <Footer /> */}
     </>
   )
 }
