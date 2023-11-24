@@ -63,13 +63,41 @@ export const WCPAT_QUERY = gql`{
         edges {
           node {
             homePage {
-             whatsNew {
-               details
+              whatsNew {
+                details
+                title
+                pdfFile {
+                  mediaItemUrl
+                }
+              }
+               circular{
+                details
+                title
+                pdfFile{
+                  mediaItemUrl
+                }
+              }
+              pressRelease{
+                details
+                title
+                pdfFile{
+                  mediaItemUrl
+                }
+              }
+              advertisement{
+                details
                title
-              pdfFile {
+              pdfFile{
                 mediaItemUrl
               }
-             }
+              }
+              tender{
+                details
+                title
+                pdfFile{
+                  mediaItemUrl
+                }
+              }
             }
           }
         }

@@ -56,7 +56,7 @@ return <>
 <span className="flex">
   {
     topHeader && topHeader?.pages?.edges[0]?.node?.homePage?.topHeaderLeftMenu.map((item,index)=>{
-      return <a target="_blank" href={item?.pageLink} title={item?.pageTitle} rel="noopener noreferrer">{item?.pageTitle}</a>
+      return <a key={"left"+index} target="_blank" href={item?.pageLink} title={item?.pageTitle} rel="noopener noreferrer">{item?.pageTitle}</a>
     })
   }
 </span>
@@ -64,7 +64,7 @@ return <>
 <div className="tophead_right">
 {
     topHeader && topHeader?.pages?.edges[0]?.node?.homePage?.topHeaderRightMenu?.map((item,index)=>{
-      return <a href={item?.menuLink?.url} className="loginlinks skip-link">{item?.menuTitle}</a>
+      return <a key={"right"+index} href={item?.menuLink?.url} className="loginlinks skip-link">{item?.menuTitle}</a>
     })
   }
 {/* <a href="#main-content" className="loginlinks skip-link">Scip to main content</a>

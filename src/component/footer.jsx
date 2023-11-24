@@ -26,41 +26,44 @@ export default function Footer() {
 
   return (
     <footer>
+        
       <nav role="navigation" style={{ backgroundColor: '#555' }}>
-        <ul class="row flex-wrap">
-          <li class="col-md col-sm-4 col-xs-6 menu-item">
+      <div className="container">
+        <ul className="row flex-wrap">
+          <li className="col-md col-sm-4 col-xs-6 menu-item">
             <a href="/en/related-links" title="Related Links">Related Links</a>
           </li>
 
-          <li class="col-md col-sm-4 col-xs-6 menu-item">
+          <li className="col-md col-sm-4 col-xs-6 menu-item">
             <a href="/en/contact-us" title="Contact Us">Contact Us</a>
           </li>
 
-          <li class="col-md col-sm-4 col-xs-6 menu-item">
+          <li className="col-md col-sm-4 col-xs-6 menu-item">
             <a href="/en/website-policies" title="Website Policies">Website Policies</a>
           </li>
 
-          <li class="col-md col-sm-4 col-xs-6 menu-item">
+          <li className="col-md col-sm-4 col-xs-6 menu-item">
             <a href="/en/Terms-and-Conditions" title="Terms and Conditions">Terms and Conditions</a>
           </li>
 
-          <li class="col-md col-sm-4 col-xs-6 menu-item">
+          <li className="col-md col-sm-4 col-xs-6 menu-item">
             <a href="/en/Web-Information-Manager" title="Web Information Manager">Web Information Manager</a>
           </li>
 
-          <li class="col-md col-sm-4 col-xs-6 menu-item">
+          <li className="col-md col-sm-4 col-xs-6 menu-item">
             <a href="/en/feedback" title="Feedback">Feedback</a>
           </li>
 
-          <li class="col-md col-sm-4 col-xs-6 menu-item">
+          <li className="col-md col-sm-4 col-xs-6 menu-item">
             <a href="/en/public-opinion" title="Public Opinion">Public Opinion</a>
           </li>
 
-          <li class="col-md col-sm-4 col-xs-6">
+          <li className="col-md col-sm-4 col-xs-6 menu-item">
             <a href="/en/screen-reader" title="Help">Help</a>
           </li>
         </ul>
-      </nav>
+        </div>
+      </nav>      
     </footer>
   )
 }

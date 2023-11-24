@@ -1,0 +1,37 @@
+footer{
+
+ 
+ .menu-item a {
+    text-wrap: nowrap;
+ }
+    nav{
+        background: url('/images/footer-top-bg.jpg') repeat #333;
+        ul{
+            padding: 0;
+            list-style: none;
+            li{
+                padding: 12px 0 !important;  
+                &.menu-item {
+                    position: relative;
+                 //    display: block;
+                    font-size: 14px;
+                    &::before {
+                    content: "|";
+                    position: absolute;
+                 //    top: 50%;
+                 //    right: 0;
+                 //    transform: translateY(-50%);
+                    color: #fff;
+                 }
+                }
+            }
+           
+        }
+        a{
+            float: none;
+            min-height: 0;
+            text-decoration: none;
+           padding: 0 15px;
+        }
+    }
+}

@@ -63,7 +63,7 @@ const Spotlight = () => {
                             }}>
                             <ul className="p-0">
                             {about && about?.pages?.edges[0]?.node?.homePage?.ministers?.map((item,index)=>{
-                              return  <li className="minister-list" style={{
+                              return  <li key={"minister"+index} className="minister-list" style={{
                                 display: ' flex',
                                 justifyContent: 'center',
                                 alignItems: 'center',

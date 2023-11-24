@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import style from "./documentsTab.style.module.css";
 import {
   advertisement,
@@ -16,11 +16,18 @@ const endpoint = process.env.NEXT_PUBLIC_BASE_URL;
 
 const DocumentsTab = () => {
   const [key, setKey] = useState(0);
-  const [dataToShow, setDataToShow] = useState(whatsNew);
+  const [wcpatData,setwcpatData] = useState(false)
+  const [dataToShow, setDataToShow] = useState(false);
   const {data:wcpat} = useQuery("wcpat",async()=>{
-    const res = await request(endpoint, WCPAT_QUERY)
+    const res = await request(endpoint, WCPAT_QUERY) 
+    setwcpatData(res?.pages?.edges[0]?.node?.homePage)
+    setDataToShow(res?.pages?.edges[0]?.node?.homePage?.whatsNew)
     return res;
   })
+ 
+
+ 
+  
   return (
     <div className={style.container}>
       <div
@@ -35,7 +42,7 @@ const DocumentsTab = () => {
                   className={`${style.tabs} ${key == 0 && style.active_tab}`}
                   onClick={() => {
                     setKey(0);
-                    setDataToShow(whatsNew);
+                    setDataToShow(wcpatData?.whatsNew);
                   }}
                 >
                   What's New
@@ -44,7 +51,7 @@ const DocumentsTab = () => {
                   className={`${style.tabs} ${key == 1 && style.active_tab}`}
                   onClick={() => {
                     setKey(1);
-                    setDataToShow(circular);
+                    setDataToShow(wcpatData?.circular);
                   }}
                 >
                   Circular
@@ -53,7 +60,7 @@ const DocumentsTab = () => {
                   className={`${style.tabs} ${key == 2 && style.active_tab}`}
                   onClick={() => {
                     setKey(2);
-                    setDataToShow(pressRelease);
+                    setDataToShow(wcpatData?.pressRelease);
                   }}
                 >
                   Press Release
@@ -62,7 +69,7 @@ const DocumentsTab = () => {
                   className={`${style.tabs} ${key == 3 && style.active_tab}`}
                   onClick={() => {
                     setKey(3);
-                    setDataToShow(advertisement);
+                    setDataToShow(wcpatData?.advertisement);
                   }}
                 >
                   Advertisement
@@ -71,7 +78,7 @@ const DocumentsTab = () => {
                   className={`${style.tabs} ${key == 4 && style.active_tab}`}
                   onClick={() => {
                     setKey(4);
-                    setDataToShow(tender);
+                    setDataToShow(wcpatData?.tender);
                   }}
                 >
                   Tender

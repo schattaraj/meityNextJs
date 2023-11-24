@@ -6,7 +6,7 @@ import Image from "next/image";
 const TabData = ({ data }) => {
   return (
     <div className={style.data_wrapper}>
-      {data?.map((ele, idx) => {
+      {data && data?.map((ele, idx) => {
         return (
           <div key={idx} className={style.text}>
             <Image
@@ -15,13 +15,13 @@ const TabData = ({ data }) => {
               width="50"
               height="50"
             />
-            <span>{ele?.text}</span>
+            <span>{ele?.title}</span>
             <br/>
             &nbsp;
-            {ele?.file && (
+            {ele?.pdfFile && (
               <>
                 <Image src="/images/pdf.png" alt="" width="8" height="8" />
-                <a target="_blank" href={ele?.file} className="ml-2">
+                <a target="_blank" href={ele?.pdfFile} className="ml-2">
                   Download
                 </a>
               </>
@@ -30,9 +30,9 @@ const TabData = ({ data }) => {
           </div>
         );
       })}
-      <div className={style.readMore}>
+      {/* <div className={style.readMore}>
         Read More <MdArrowRightAlt />
-      </div>
+      </div> */}
     </div>
   );
 };
