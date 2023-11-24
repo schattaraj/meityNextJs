@@ -1,16 +1,15 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import Header from '@/component/header'
-import Carousel from 'react-bootstrap/Carousel';
-import Footer from '@/component/footer';
+import Head from "next/head";
+import Image from "next/image";
+import { Inter } from "next/font/google";
+import Header from "@/component/header";
+import Carousel from "react-bootstrap/Carousel";
+import Footer from "@/component/footer";
 import { request, gql } from "graphql-request";
 import { useQuery } from "react-query";
-import { useEffect, useState } from 'react';
-import Spotlight from '@/component/spotlight';
-import Gallery from '@/component/gallery';
-import SocialFeed from '@/component/socialFeeds';
-import DocumentsTab from '@/component/documentsTab/documentsTab';
+import { useEffect, useState } from "react";
+import Spotlight from "@/component/spotlight";
+import Gallery from "@/component/gallery";
+import DocumentsTab from "@/component/documentsTab/documentsTab";
 
 const endpoint = process.env.NEXT_PUBLIC_BASE_URL;
 
@@ -34,10 +33,10 @@ const BANNER_QUERY = gql`
   }
 `;
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  const [state, setState] = useState(false)
+  const [state, setState] = useState(false);
   const { data: banner } = useQuery("banner", async () => {
     const res = await request(endpoint, BANNER_QUERY);
     return res;
@@ -56,20 +55,26 @@ export default function Home() {
       <Header />
       <div className="banner1 gap">
         <Carousel>
-          {
-            banner && banner?.pages?.edges[0]?.node?.homePage?.bannerDetails?.map((item, index) => {
-              return <Carousel.Item key={index}>
-                <img typeof="foaf:Image" src={item.bannerImage.mediaItemUrl} />
-              </Carousel.Item>
-            })
-          }
+          {banner &&
+            banner?.pages?.edges[0]?.node?.homePage?.bannerDetails?.map(
+              (item, index) => {
+                return (
+                  <Carousel.Item key={index}>
+                    <img
+                      typeof="foaf:Image"
+                      src={item.bannerImage.mediaItemUrl}
+                    />
+                  </Carousel.Item>
+                );
+              }
+            )}
         </Carousel>
       </div>
       <Spotlight />
       <Gallery />
       <DocumentsTab />
-      <SocialFeed />
+      {/* <SocialFeed /> */}
       <Footer />
     </>
-  )
+  );
 }
