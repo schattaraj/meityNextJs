@@ -11,8 +11,13 @@ const ABOUT_QUERY = gql`
         homePage{
          	homeAboutTitle
           homeAboutDetails
-          aboutImage{
-            sourceUrl
+          ministers {
+            ministerName
+            misinterDesignation
+            url
+            ministerPhoto {
+              mediaItemUrl
+            }
           }
         }
       }
@@ -30,16 +35,16 @@ const Spotlight = () => {
   });
 
   return (
-    <div className="bg-wrapper top-bg-wrapper gray-bg padding-top-bott gap">
+    <div className="bg-wrapper top-bg-wrapper gray-bg padding-top-bott gap" id="skipContent">
       <div className="container common-container four_content body-container top-body-container padding-top-bott2" role="complementary">
         <div className="row">
           <div className="col-md-8">
             <div className="d-flex flex-column justify-content-center h-100">
               <h2 className="mb-4" style={{ fontSize: '21px' }}>
-                {about && <><span style={{ color: '#E22D15' }}>{about.pages.edges[0].node.homePage.homeAboutTitle}</span></>}
+                {about && <><span style={{ color: '#E22D15' }}>{about?.pages?.edges[0]?.node?.homePage?.homeAboutTitle}</span></>}
               </h2>
               <p className="mb-4" style={{ fontSize: '17px' }}>
-                {about && about.pages.edges[0].node.homePage.homeAboutDetails}
+                {about && about?.pages?.edges[0]?.node?.homePage?.homeAboutDetails}
               </p>
             </div>
           </div>
@@ -57,16 +62,17 @@ const Spotlight = () => {
                               justifyContent: 'center'
                             }}>
                             <ul className="p-0">
-                              <li className="minister-list" style={{
+                            {about && about?.pages?.edges[0]?.node?.homePage?.ministers?.map((item,index)=>{
+                              return  <li className="minister-list" style={{
                                 display: ' flex',
                                 justifyContent: 'center',
                                 alignItems: 'center',
                                 flexDirection: 'column'
 
                               }}>
-                                <a href="/en/ministers/profile-honble-minister" hrefLang="en">
+                                <a href={item?.url} hrefLang="en">
                                   <img
-                                    src="https://www.msde.gov.in/sites/default/files/styles/photo_gallery_grid_300x250/public/2021-11/minister.jpg?itok=l-SRxkbZ"
+                                    src={item?.ministerPhoto?.mediaItemUrl}
                                     width='105px'
                                     height='105px'
                                     alt="Hon'ble Minister"
@@ -80,52 +86,21 @@ const Spotlight = () => {
                                 </a>
                                 <div className="views-field views-field-title">
                                   <span className="field-content minister-title" style={{ fontSize: '17px' }}>
-                                    Shri Dharmendra Pradhan
+                                    {item?.ministerName}
                                   </span>
                                 </div>
                                 <div className="views-field views-field-field-name">
                                   <h3 className="field-content minister-desination">
-                                    <a href="/en/ministers/profile-honble-minister" hrefLang="en" style={{ fontSize: '14px', color: '#E22D15' }}>
-                                      Hon’ble Minister
+                                    <a href={item?.url} hrefLang="en" style={{ fontSize: '14px', color: '#E22D15' }}>
+                                    {item?.misinterDesignation}
                                     </a>
                                   </h3>
                                 </div>
                               </li>
-                              <li className="minister-list" style={{
-                                display: ' flex',
-                                justifyContent: 'center',
-                                alignItems: 'center',
-                                flexDirection: 'column'
-
-                              }}>
-                                <a href="/en/ministers/profile-honble-minister-of-state" hrefLang="en">
-                                  <img
-                                    src="https://www.msde.gov.in/sites/default/files/styles/photo_gallery_grid_300x250/public/2021-07/mos_3.jpg?itok=oxZo4-EJ"
-                                    width={105}
-                                    height={126}
-                                    alt=" Shri Rajeev Chandrasekhar"
-                                    className="img-fluid rounded"
-                                    style={{
-                                      border: '1px solid rgba(o, o, o, 0.3)',
-                                      width: '105px',
-                                      height: '105px',
-                                    }}
-                                  />
-                                </a>
-                                <div className="views-field views-field-title">
-                                  <span className="field-content minister-title" style={{ fontSize: '17px' }}>
-                                    Shri Rajeev Chandrasekhar
-                                  </span>
-                                </div>
-                                <div className="views-field views-field-field-name">
-                                  <h3 className="field-content minister-desination">
-                                    <a href="/en/ministers/profile-honble-minister-of-state" hrefLang="en"
-                                      style={{ fontSize: '14px', color: '#E22D15' }}>
-                                      Hon’ble Minister of State
-                                    </a>
-                                  </h3>
-                                </div>
-                              </li>
+                            })
+                            
+                            }
+                             
                             </ul>
                           </div>
                         </div>

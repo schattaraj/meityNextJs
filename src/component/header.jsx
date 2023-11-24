@@ -2,6 +2,8 @@ import { request, gql } from "graphql-request";
 import { useQuery } from "react-query";
 import Link from "next/link"
 import { useState } from "react";
+import parse from 'html-react-parser';
+import { FLOAT_ELEMENT_QUERY, TOP_HEADER_QUERY } from "./query";
 const endpoint = process.env.NEXT_PUBLIC_BASE_URL;
 const Logo_Query = gql`{
   pages{
@@ -11,6 +13,7 @@ const Logo_Query = gql`{
           logo{
             mediaItemUrl
           }
+          logoText
         }
       }
     }
@@ -22,6 +25,14 @@ export default function Header(){
   const [showMenu,setShowMenu] = useState(false)
   const {data:logo} = useQuery("logo",async()=>{
     const res = await request(endpoint, Logo_Query)
+    return res;
+  })
+  const {data:floatElements} = useQuery("floatElements",async()=>{
+    const res = await request(endpoint, FLOAT_ELEMENT_QUERY)
+    return res;
+  })
+  const {data:topHeader} = useQuery("topHeader",async()=>{
+    const res = await request(endpoint, TOP_HEADER_QUERY)
     return res;
   })
   const toggleMenu = ()=>{
@@ -37,26 +48,30 @@ return <>
 		<div className="wrapper">
 			<div className="region region-header">
         <div className="region-inner clearfix">
-          <div id="block-block-4" className="block block-block no-title">
+          <div id="block-block-4 mb-0" className="block block-block no-title">
             <div className="block-inner clearfix">  
   
   <div className="block-content content">       
 <div className="tophead_left">
 <span className="flex">
-<a target="_blank" href="https://india.gov.in/hi" title="भारत सरकार ( बाहरी वेबसाइट जो एक नई विंडो में खुलती है)" rel="noopener noreferrer">भारत सरकार</a>
-<a target="_blank" href="https://india.gov.in/" title="Government Of India,External Link that opens in a new window" rel="noopener noreferrer">Government of india</a>
-
+  {
+    topHeader && topHeader?.pages?.edges[0]?.node?.homePage?.topHeaderLeftMenu.map((item,index)=>{
+      return <a target="_blank" href={item?.pageLink} title={item?.pageTitle} rel="noopener noreferrer">{item?.pageTitle}</a>
+    })
+  }
 </span>
 </div>
 <div className="tophead_right">
-<a href="#main-content" className="loginlinks skip-link">Scip to main content</a>
+{
+    topHeader && topHeader?.pages?.edges[0]?.node?.homePage?.topHeaderRightMenu?.map((item,index)=>{
+      return <a href={item?.menuLink?.url} className="loginlinks skip-link">{item?.menuTitle}</a>
+    })
+  }
+{/* <a href="#main-content" className="loginlinks skip-link">Scip to main content</a>
 <a href="#main-content" className="loginlinks skip-link">Screen Reader Access</a>
 <a href="https://www.india.gov.in/user/login" className="loginlinks">Search</a>
 <a href="https://www.india.gov.in/user/login" className="loginlinks">Sitemap</a>
-<a href="https://www.india.gov.in/user/login" className="loginlinks">Language</a>
-			
-
-{/* <a href="https://www.xn--i1bj3fqcyde.xn--11b7cb3a6a.xn--h2brj9c/" className="alink" id="switch-lang" title="Change Language हिन्दी" aria-label="Change Language हिन्दी" rel="हिन्दी">हिन्दी</a>    */}
+<a href="https://www.india.gov.in/user/login" className="loginlinks">Language</a> */}
 </div></div>
   </div></div></div></div>		</div>
 	</section>
@@ -66,17 +81,19 @@ return <>
 <h1 style={{display: "none"}}><img src="https://www.india.gov.in/sites/upload_files/npi/files/newsletter/logo_share.png" alt="NPI Logo"/></h1>
         			  <div id="logo">
 				 <a href="https://www.india.gov.in/" aria-label="Go to home" title="Go to home">
-          <img alt="India Gov Logo" src={logo?.pages?.edges[0]?.node?.homePage.logo.mediaItemUrl} typeof="foaf:Image" className="site-logo"/>
-          <span>कौशल विकास और उद्यमशीलता मंत्रालय              <br/>
-              <em>Ministry of </em> Skill Development
-              <br/>
-              And Entrepreneurship            </span>
+          <img alt="Logo" src={logo?.pages?.edges[0]?.node?.homePage?.logo?.mediaItemUrl} typeof="foaf:Image" className="site-logo"/>
+          {logo && parse(logo?.pages?.edges[0]?.node?.homePage?.logoText)}
           </a>
 			  </div>
-        <div className="float-element">
-              <a href="https://www.g20.org/en/" target="_blank" className="g20" rel="noopener noreferrer"><img className="national_emblem" src="/images/G20_logo.png" alt="G20" style={{height: "73px"}}/></a>
-              <a className="sw-logo1" target="_blank" href="https://www.skillindia.gov.in/" title="Skill India, External link that open in a new windows " rel="noopener noreferrer"><img src="/images/skill-india.png" alt="Skill India"/></a>
+        {
+          floatElements && <div className="float-element">
+            {
+        floatElements?.pages?.edges[0]?.node?.homePage?.floatElement?.map((item,index)=>{
+          return <a key={"floatElement"+index} href={item?.floatElementUrl?.url} target="_blank" className="g20" rel="noopener noreferrer"><img className="national_emblem" src={item?.floatImage?.mediaItemUrl} alt="G20" style={{height: "73px"}}/></a>
+        })
+            }
             </div>
+            }
         <button className={showMenu ? "toggle-bar cross" : "toggle-bar"} onClick={toggleMenu}></button>
 			              {/* <a className="mobileNav" aria-label="Mobile Menu" title="Mobile Menu" href="javascript:;"><span></span><span></span><span></span></a> */}
 		

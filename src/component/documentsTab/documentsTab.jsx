@@ -9,11 +9,18 @@ import {
 } from "./data";
 import TabData from "./tabData";
 import Image from "next/image";
+import { request, gql } from "graphql-request";
+import { useQuery } from "react-query";
+import { WCPAT_QUERY } from "../query";
+const endpoint = process.env.NEXT_PUBLIC_BASE_URL;
 
 const DocumentsTab = () => {
   const [key, setKey] = useState(0);
   const [dataToShow, setDataToShow] = useState(whatsNew);
-
+  const {data:wcpat} = useQuery("wcpat",async()=>{
+    const res = await request(endpoint, WCPAT_QUERY)
+    return res;
+  })
   return (
     <div className={style.container}>
       <div
