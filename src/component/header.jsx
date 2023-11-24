@@ -73,9 +73,9 @@ return <>
               And Entrepreneurship            </span>
           </a>
 			  </div>
-        <div class="float-element">
-              <a href="https://www.g20.org/en/" target="_blank" class="g20" rel="noopener noreferrer"><img class="national_emblem" src="/images/G20_logo.png" alt="G20" style={{height: "73px"}}/></a>
-              <a class="sw-logo1" target="_blank" href="https://www.skillindia.gov.in/" title="Skill India, External link that open in a new windows " rel="noopener noreferrer"><img src="/images/skill-india.png" alt="Skill India"/></a>
+        <div className="float-element">
+              <a href="https://www.g20.org/en/" target="_blank" className="g20" rel="noopener noreferrer"><img className="national_emblem" src="/images/G20_logo.png" alt="G20" style={{height: "73px"}}/></a>
+              <a className="sw-logo1" target="_blank" href="https://www.skillindia.gov.in/" title="Skill India, External link that open in a new windows " rel="noopener noreferrer"><img src="/images/skill-india.png" alt="Skill India"/></a>
             </div>
         <button className={showMenu ? "toggle-bar cross" : "toggle-bar"} onClick={toggleMenu}></button>
 			              {/* <a className="mobileNav" aria-label="Mobile Menu" title="Mobile Menu" href="javascript:;"><span></span><span></span><span></span></a> */}
@@ -92,13 +92,13 @@ return <>
       </Link>
     </li>
 <li>
-  <Link href={"#"}>Dashboard <span class="indicator">+</span></Link>
+  <Link href={"#"}>Dashboard <span className="indicator">+</span></Link>
   <ul className="submenu">
         <li><Link href={"#"}>NAPS</Link></li>
         <li><Link href={"#"}>PMKVY</Link></li>
       </ul>
   </li>
-  <li><Link href={"#"}>About MSDE <span class="indicator">+</span></Link>
+  <li><Link href={"#"}>About MSDE <span className="indicator">+</span></Link>
   <ul className="submenu">
         <li><Link href={"#"}>About MSDE</Link></li>
         <li><Link href={"#"}>Background</Link></li>
@@ -111,15 +111,15 @@ return <>
   </ul>
   </li>
   <li><Link href={"#"}>Minister</Link></li>
-  <li><Link href={"#"}>Organizations <span class="indicator">+</span></Link>
+  <li><Link href={"#"}>Organizations <span className="indicator">+</span></Link>
   <ul className="submenu">
         <li><Link href={"#"}>Directorate General of Training(DGT)</Link></li>
         <li><Link href={"#"}>Directorate of Jan Skhikshan Sansthan(DJSS)</Link></li>
         <li><Link href={"#"}>National Council for Vocational Education and Training(NSDC)</Link></li>
   </ul>
   </li>
-  <li><Link href={"#"}>Schemes & Initiatives <span class="indicator">+</span></Link></li>
-  <li><Link href={"#"}>Report/Documents <span class="indicator">+</span></Link></li>
+  <li><Link href={"#"}>Schemes & Initiatives <span className="indicator">+</span></Link></li>
+  <li><Link href={"#"}>Report/Documents <span className="indicator">+</span></Link></li>
 
   </ul>
 </div>
