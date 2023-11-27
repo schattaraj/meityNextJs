@@ -6,6 +6,7 @@
 .wrapper{
   background-color: #fff;
   height: 400px;
+  overflow-x: auto;
 }
 @media screen and (max-width: 992px) {
   .wrapper {
@@ -38,12 +39,13 @@
   /* border: 1px solid #E22D15; */
   display: block;
   margin: 0;
-  padding: 10px 0px;
+  padding: 10px 10px;
   width: 100%;
   height: 100%;
   text-align: center;
   border: none;
   border-right: 1px solid #fff;
+  text-wrap: nowrap;
 }
 
 .active_tab{

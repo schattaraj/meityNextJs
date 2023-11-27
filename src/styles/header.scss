@@ -275,6 +275,10 @@ justify-content: space-between;
       margin: 0;
       &.menus{
       display: flex;
+      max-height: 38px;
+      overflow: hidden;
+      flex-wrap: wrap;
+      transition: all 0.4s;
       li{
         position: relative;
   a{
@@ -319,6 +323,31 @@ justify-content: space-between;
           visibility: visible;
         }
       }
+    }
+  }
+}
+.wrapper{
+  position: relative;
+  .more{
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #000;
+    color: #fff;
+    font-size: 14px;
+    height: 100%;
+    padding:0 16px;
+    font-weight: 600;
+    span{
+      display: block;
+      padding-bottom: 8px;
+    }
+    .icon{
+      position: absolute;
+      bottom:-6px;
+      padding-bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
     }
   }
 }
@@ -370,6 +399,7 @@ justify-content: space-between;
     ul{
       &.menus{
         display: block;
+        max-height: none;
         li{
           .submenu{
             position: relative;
