@@ -103,3 +103,36 @@ export const WCPAT_QUERY = gql`{
         }
       }
 }`;
+
+export const VGallery_QUery = gql`{
+  pages {
+    edges {
+      node {
+        homePage {
+        videothumbnail {
+          mediaItemUrl
+        }
+        youtubeLink {
+          url
+        }
+        }
+      }
+    }
+  }
+}`
+
+export const PGallery_QUery = gql`{
+  pages {
+    edges {
+      node {
+        homePage {
+          photos {
+            image{
+              mediaItemUrl
+            }
+          }
+        }
+      }
+    }
+  }
+}`
