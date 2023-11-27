@@ -9,20 +9,34 @@ footer{
         ul{
             padding: 0;
             list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
             li{
-                padding: 12px 0 !important;  
+                
                 &.menu-item {
                     position: relative;
                  //    display: block;
                     font-size: 14px;
+                    text-align: center; 
+                    padding: 14px 16px;
+                    a{
+                        // padding: 0 8px;
+                    }
                     &::before {
                     content: "|";
                     position: absolute;
+                    right: 0;
                  //    top: 50%;
                  //    right: 0;
                  //    transform: translateY(-50%);
                     color: #fff;
-                 }
+                 } 
+                }
+                &:last-child{
+                    &::before{
+                        content: "";
+                    }
                 }
             }
            
@@ -31,7 +45,67 @@ footer{
             float: none;
             min-height: 0;
             text-decoration: none;
-           padding: 0 15px;
+        //    padding: 0 15px;
         }
     }
+    .footer-bottom{
+        padding: 12px 0;
+        color: #fff;
+        font-size: 14px;
+        background-image: url(/images/footer-bottom-bg.png);
+        background-repeat: repeat;
+        background-color: #333;
+        color: #fff;
+        position: relative; 
+        .flex{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            a{
+                color: #fff;
+            }
+            .copyright-content{
+                padding-right: 20px;
+            }
+            .alterupdated{
+                text-wrap: nowrap;
+            }
+            .logo-cmf{
+                margin: 0 15px;
+                img{
+                    max-width: auto;
+                }
+            }
+        }
+        .customvisit{
+            text-wrap: nowrap;
+            display: flex;
+            span{
+                padding:4px;
+                margin-right: 4px;
+            }
+            .count{
+                background-color: #000;
+                padding:4px;
+                color: #fff;
+                font-size: 16px;
+                max-width: max-content; 
+                height: fit-content;
+                letter-spacing: 4px;
+            }
+        }
+    }
+}
+@media screen and (max-width: 1024.99px){
+nav ul {
+float: none;
+width: 100%;
+}
+.footer-bottom .flex{
+    flex-wrap: wrap;
+    .copyright-content{
+        margin: 12px auto;
+        text-align: center;
+    }
+}
 }

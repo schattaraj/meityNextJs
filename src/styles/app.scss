@@ -278,6 +278,9 @@ a#advsearchbtn {
             opacity: 1;
             visibility: visible;
          }
+         .swiper-button-disabled{
+            opacity: 0.35;
+         }
       }
    }
 }

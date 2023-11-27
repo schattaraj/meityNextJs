@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['design.gowebbi.us'],
+    domains: ['10.1.13.10'],
   },
 }
 
