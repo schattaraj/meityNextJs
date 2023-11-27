@@ -53,9 +53,9 @@ export default function Footer() {
             <div className="customvisit"></div>
             <div className="logo-cmf"></div>
             <div className="logo-cmf"></div>
-            <div class="copyright-content"> Website Content  Owned by  <strong>Ministry of Skill Development &amp; Entrepreneurship | Government Of India</strong> <span>Designed, Developed and Hosted by <a target="_blank" title="NIC, External Link that opens in a new window" href="http://www.nic.in/" rel="noopener noreferrer"><strong>National Informatics Centre</strong></a><strong> ( NIC )</strong></span> <span>  All rights reserved</span>
+            <div className="copyright-content"> Website Content  Owned by  <strong>Ministry of Skill Development &amp; Entrepreneurship | Government Of India</strong> <span>Designed, Developed and Hosted by <a target="_blank" title="NIC, External Link that opens in a new window" href="http://www.nic.in/" rel="noopener noreferrer"><strong>National Informatics Centre</strong></a><strong> ( NIC )</strong></span> <span>  All rights reserved</span>
 					  </div>
-            <div class="alterupdated">Last Updated : 22-11-2023</div>
+            <div className="alterupdated">Last Updated : 22-11-2023</div>
           </div>
         </div>
         </div>    
