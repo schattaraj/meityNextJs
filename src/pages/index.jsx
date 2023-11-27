@@ -9,7 +9,6 @@ import { useQuery } from "react-query";
 import { useEffect, useState } from 'react';
 import Spotlight from '@/component/spotlight';
 import Gallery from '@/component/gallery';
-import SocialFeed from '@/component/socialFeeds';
 import DocumentsTab from '@/component/documentsTab/documentsTab';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";

@@ -148,7 +148,7 @@ const SocialFeed = () => {
                 <p>✨ Detecting memory leaks in 50 seconds:</p>
                 <p>Open Chrome Dev Tools</p>
                 <p>
-                  Navigate to "Memory...
+                  Navigate to &quot;Memory...
                   <a href="#">see more</a>
                 </p>
                 <video
@@ -298,7 +298,7 @@ const SocialFeed = () => {
                 <p>✨ Detecting memory leaks in 50 seconds:</p>
                 <p>Open Chrome Dev Tools</p>
                 <p>
-                  Navigate to "Memory...
+                  Navigate to &quot;Memory...
                   <a href="#">see more</a>
                 </p>
                 <video
