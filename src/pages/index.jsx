@@ -84,7 +84,7 @@ export default function Home() {
       <Spotlight/>
       <Gallery />
       <DocumentsTab />
-      <SocialFeed />
+      {/* <SocialFeed /> */}
       <div className="slider-area">
       <div className="container">
       <Swiper
