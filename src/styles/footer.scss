@@ -9,15 +9,24 @@ footer{
         ul{
             padding: 0;
             list-style: none;
+            display: flex;
+            justify-content: center;
             li{
                 padding: 12px 0 !important;  
                 &.menu-item {
                     position: relative;
                  //    display: block;
                     font-size: 14px;
+                    text-align: center;
+                    margin: 0 8px;
+                    padding: 0 8px;
+                    a{
+                        // padding: 0 8px;
+                    }
                     &::before {
                     content: "|";
                     position: absolute;
+                    right: 0;
                  //    top: 50%;
                  //    right: 0;
                  //    transform: translateY(-50%);
@@ -31,7 +40,13 @@ footer{
             float: none;
             min-height: 0;
             text-decoration: none;
-           padding: 0 15px;
+        //    padding: 0 15px;
+        }
+    }
+    .footer-bottom{
+        .flex{
+            display: flex;
+            justify-content: center;
         }
     }
 }

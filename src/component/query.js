@@ -98,6 +98,11 @@ export const WCPAT_QUERY = gql`{
                   mediaItemUrl
                 }
               }
+              wcpatImage {
+                leftImage {
+                  mediaItemUrl
+                }
+              }
             }
           }
         }
