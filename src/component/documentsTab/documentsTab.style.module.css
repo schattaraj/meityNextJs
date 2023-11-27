@@ -7,18 +7,6 @@
   background-color: #fff;
   height: 400px;
 }
-@media screen and (max-width: 992px) {
-  .wrapper {
-    height: auto;
-  }
-  .image_wrapper{
-    display: flex;
-  }
-  .image{
-    height: auto !important;
-    width:25%
-  }
-}
 .tabs_container{
   display: flex;
   justify-content: space-between;
