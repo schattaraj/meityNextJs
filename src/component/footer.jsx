@@ -50,9 +50,12 @@ export default function Footer() {
       <div className="footer-bottom">
         <div className="container">
           <div className="flex">
-            <div className="customvisit"></div>
-            <div className="logo-cmf"></div>
-            <div className="logo-cmf"></div>
+            <div className="customvisit">
+              <span>Visitor Count:</span>
+              <div className="count">255606</div>
+            </div>
+            <div className="logo-cmf"><img src="/images/cmf-logo.png" alt="" /></div>
+            <div className="logo-cmf"><img src="/images/stqc.png" alt="" /></div>
             <div className="copyright-content"> Website Content  Owned by  <strong>Ministry of Skill Development &amp; Entrepreneurship | Government Of India</strong> <span>Designed, Developed and Hosted by <a target="_blank" title="NIC, External Link that opens in a new window" href="http://www.nic.in/" rel="noopener noreferrer"><strong>National Informatics Centre</strong></a><strong> ( NIC )</strong></span> <span>  All rights reserved</span>
 					  </div>
             <div className="alterupdated">Last Updated : 22-11-2023</div>
