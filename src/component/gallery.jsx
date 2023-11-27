@@ -1,6 +1,23 @@
 import React from 'react';
+import { VGallery_QUery, PGallery_QUery } from './query';
+import { request } from "graphql-request";
+import { useQuery } from 'react-query';
+
+const endpoint = process.env.NEXT_PUBLIC_BASE_URL;
 
 const Gallery = () => {
+
+  const { data: vGallery } = useQuery("vgallery", async () => {
+    const res = await request(endpoint, VGallery_QUery);
+    return res;
+  });
+
+  const { data: pGallery } = useQuery("pgallery", async () => {
+    const res = await request(endpoint, PGallery_QUery);
+    return res;
+  });
+
+
   return (
     <div className="container common-container four_content gallery-container gap" role="complementary">
       <div className="row">
@@ -35,12 +52,15 @@ const Gallery = () => {
               </h3>
             </div>
 
-            <img
-              src="https://www.msde.gov.in/sites/default/files/styles/photo_gallery_large_800x650/public/2023-10/video-42.jpg?itok=UdECNmHn"
+            {vGallery && <img
+              src={vGallery?.pages?.edges[0].node.homePage.videothumbnail.mediaItemUrl}
               alt="कौशल दीक्षांत समारोह 12 अक्टूबर 2023"
               style={{ width: 'auto', height: '390px' }}
               className="img-fluid"
             />
+            }
+
+
           </div>
         </div>
 
@@ -81,7 +101,7 @@ const Gallery = () => {
               <div className="carousel-inner">
                 <div className="carousel-item active">
                   <img
-                    src="https://www.msde.gov.in/sites/default/files/styles/home_gallery/public/2023-11/05.jpg?itok=uCWx0a_M"
+                    src={pGallery ? pGallery.pages.edges[0].node.homePage.photos[0].image.mediaItemUrl : ""}
                     className="d-block w-100"
                     alt="Felicitation of winners of WorldSkills Competition 2022: 17th October 2023"
                     style={{ width: 'auto', height: '390px' }}
@@ -89,7 +109,7 @@ const Gallery = () => {
                 </div>
                 <div className="carousel-item">
                   <img
-                    src="https://www.msde.gov.in/sites/default/files/styles/home_gallery/public/2023-11/04.jpg?itok=nfMd8dMX"
+                    src={pGallery ? pGallery.pages.edges[0].node.homePage.photos[1].image.mediaItemUrl : ""}
                     className="d-block w-100"
                     alt="Felicitation of winners of WorldSkills Competition 2022: 17th October 2023"
                     style={{ width: 'auto', height: '390px' }}
@@ -97,7 +117,7 @@ const Gallery = () => {
                 </div>
                 <div className="carousel-item">
                   <img
-                    src="https://www.msde.gov.in/sites/default/files/styles/home_gallery/public/2023-11/03.jpg?itok=txSjy-IK"
+                    src={pGallery ? pGallery.pages.edges[0].node.homePage.photos[2].image.mediaItemUrl : ""}
                     className="d-block w-100"
                     alt="Felicitation of winners of WorldSkills Competition 2022: 17th October 2023"
                     style={{ width: 'auto', height: '390px' }}
@@ -120,7 +140,7 @@ const Gallery = () => {
             <div className="d-flex justify-content-between flex-column flex-xs-row h-100 w-100">
               <div className="h-100 w-100 p-2">
                 <img
-                  src="https://www.msde.gov.in/sites/default/files/styles/home_gallery/public/2023-11/05.jpg?itok=uCWx0a_M"
+                  src={pGallery ? pGallery.pages.edges[0].node.homePage.photos[0].image.mediaItemUrl : ""}
                   alt="Felicitation of winners of WorldSkills Competition 2022: 17th October 2023"
                   className="img-fluid h-100"
                   draggable="false"
@@ -129,7 +149,7 @@ const Gallery = () => {
               </div>
               <div className="h-100 w-100 p-2">
                 <img
-                  src="https://www.msde.gov.in/sites/default/files/styles/home_gallery/public/2023-11/04.jpg?itok=nfMd8dMX"
+                  src={pGallery ? pGallery.pages.edges[0].node.homePage.photos[1].image.mediaItemUrl : ""}
                   alt="Felicitation of winners of WorldSkills Competition 2022: 17th October 2023"
                   className="img-fluid h-100"
                   draggable="false"
@@ -137,7 +157,7 @@ const Gallery = () => {
               </div>
               <div className="h-100 w-100 p-2">
                 <img
-                  src="https://www.msde.gov.in/sites/default/files/styles/home_gallery/public/2023-11/03.jpg?itok=txSjy-IK"
+                  src={pGallery ? pGallery.pages.edges[0].node.homePage.photos[2].image.mediaItemUrl : ""}
                   alt="Felicitation of winners of WorldSkills Competition 2022: 17th October 2023"
                   className="img-fluid h-100"
                   draggable="false"
