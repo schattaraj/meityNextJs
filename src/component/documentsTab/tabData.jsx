@@ -21,7 +21,7 @@ const TabData = ({ data }) => {
             {ele?.pdfFile && (
               <>
                 <Image src="/images/pdf.png" alt="" width="8" height="8" />
-                <a target="_blank" href={ele?.pdfFile} className="ml-2">
+                <a target="_blank" href={ele?.pdfFile?.mediaItemUrl} className="ml-2">
                   Download
                 </a>
               </>

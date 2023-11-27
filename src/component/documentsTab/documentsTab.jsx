@@ -93,7 +93,7 @@ const DocumentsTab = () => {
             <div className={`row ${style.image_wrapper}`}>
               {
                 wcpatData?.wcpatImage?.map((item,index)=>{
-                  return <Image src={item?.leftImage?.mediaItemUrl} alt="" width="170" height="188" className={`{col-3 col-lg-6 mb-4 ${style.image}`}/>
+                  return <Image key={"wcpatimage"+index} src={item?.leftImage?.mediaItemUrl} alt="" width="170" height="188" className={`{col-3 col-lg-6 mb-4 ${style.image}`}/>
                 })
               }              
               {/* <Image src="/images/ncvet-logo-2.jpg" alt="" width="170" height="188" className={`{col-3 col-lg-6 mb-4 ${style.image}`}/>
