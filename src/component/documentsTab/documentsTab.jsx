@@ -25,9 +25,6 @@ const DocumentsTab = () => {
     return res;
   })
  
-
- 
-  
   return (
     <div className={style.container}>
       <div
