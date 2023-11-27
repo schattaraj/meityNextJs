@@ -46,13 +46,33 @@
     background: #7D0202;
     opacity: 1;
 }
+@media screen and (max-width: 380px) {
+  .content.facebook{
+    padding: 16px 0;
+  }
+}
+.facebook_feed{
+  display: flex;
+  justify-content: center;
+}
   .content {
     padding: 16px 18px;
     background-color: #F5F7FF;
-    min-height: 700px;
-    max-height: 700px;
+    min-height: 810px;
+    max-height: 810px;
+    overflow-y: auto;
+    width: 100%;
+  }
+  .content_twitter_outer {
+    padding: 16px 18px;
+    background-color: #F5F7FF;
+  }
+  .content_twitter_inner {
+    min-height: 710px;
+    max-height: 710px;
     overflow-y: auto;
   }
+  .twitter h3 ,
   .content h3 {
     width: 100%;
     height: 62px;
@@ -169,120 +189,120 @@
     color: #C4C4C4;
     font-weight: normal;
   }
-  .content.twitter .inner_content {
+.twitter .inner_content {
     background-color: #ffffff;
   }
-  .content.twitter .inner_content .header {
+.twitter .inner_content .header {
     display: flex;
     justify-content: space-between;
     padding: 10px;
     align-items: center;
     border-bottom: 1px solid rgba(29, 161, 242, 0.12);
   }
-  .content.twitter .inner_content .header h4 {
+.twitter .inner_content .header h4 {
     font-size: 22px;
     margin: 0;
   }
-  .content.twitter .inner_content .header h4 span {
+.twitter .inner_content .header h4 span {
     font-size: 12px;
   }
-  .content.twitter .inner_content .header h4 span a {
+.twitter .inner_content .header h4 span a {
     color: #1DA1F2;
   }
-  .content.twitter .inner_content .header svg {
+.twitter .inner_content .header svg {
     stroke: none;
   }
-  .content.twitter .inner_content .text {
+.twitter .inner_content .text {
     padding: 10px;
     padding-bottom: 0;
   }
-  .content.twitter .inner_content .text small {
+.twitter .inner_content .text small {
     color: #C4C4C4;
     line-height: 120%;
     display: block;
   }
-  .content.twitter .inner_content .text .flex {
+.twitter .inner_content .text .flex {
     margin: 8px 0;
     display: flex;
   }
-  .content.twitter .inner_content .text .flex img {
+.twitter .inner_content .text .flex img {
     width: 32px;
     height: 32px;
     margin-right: 12px;
   }
-  .content.twitter .inner_content .text .flex .name h5 {
+.twitter .inner_content .text .flex .name h5 {
     font-size: 12px;
     margin-bottom: 4px;
     line-height: 100%;
   }
-  .content.twitter .inner_content .text .flex .name span {
+.twitter .inner_content .text .flex .name span {
     color: #C4C4C4;
     font-size: 12px;
     display: block;
   }
-  .content.twitter .inner_content .text p {
+.twitter .inner_content .text p {
     font-size: 14px;
     margin-bottom: 28px;
   }
-  .content.twitter .inner_content .text p a {
+.twitter .inner_content .text p a {
     color: #1DA1F2;
   }
-  .content.twitter .inner_content .text .card {
+.twitter .inner_content .text .card {
     display: flex;
     flex-direction: row;
     height: 92px;
     border-radius: 12px;
     overflow: hidden;
   }
-  .content.twitter .inner_content .text .card img {
+.twitter .inner_content .text .card img {
     width: 88px;
     height: 100%;
     object-fit: cover;
   }
-  .content.twitter .inner_content .text .card .info {
+.twitter .inner_content .text .card .info {
     padding: 12px;
   }
-  .content.twitter .inner_content .text .card h6 {
+.twitter .inner_content .text .card h6 {
     font-size: 12px;
     font-weight: 600;
   }
-  .content.twitter .inner_content .text .card p {
+.twitter .inner_content .text .card p {
     font-size: 12px;
     margin-bottom: 4px;
   }
-  .content.twitter .inner_content .text .card span {
+.twitter .inner_content .text .card span {
     font-size: 12px;
     color: #C4C4C4;
   }
-  .content.twitter .inner_content .text .action {
+.twitter .inner_content .text .action {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 12px 0;
     border-bottom: 1px solid #EBEDF0;
   }
-  .content.twitter .inner_content .text .action .left svg {
+.twitter .inner_content .text .action .left svg {
     width: 16px;
     height: 16px;
   }
-  .content.twitter .inner_content .text .action .left a {
+.twitter .inner_content .text .action .left a {
     margin-right: 16px;
     color: #7F7F7F;
   }
-  .content.twitter .inner_content .text .action .right {
+.twitter .inner_content .text .action .right {
     font-size: 12px;
     color: #7F7F7F;
   }
-  .content.twitter .inner_content .text .link {
+.twitter .inner_content .text .link {
     display: flex;
     justify-content: space-between;
     font-size: 12px;
     padding: 16px;
   }
-  .content.twitter .inner_content .text .link a {
+.twitter .inner_content .text .link a {
     text-decoration: none;
   }
-  .content.twitter h3 {
+.twitter h3 {
     background-color: #1DA1F2;
   }
   .content.linkedin h3 {
