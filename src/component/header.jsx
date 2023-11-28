@@ -209,7 +209,7 @@ export default function Header() {
                   <Link href={"#"}>Important Days</Link>
                 </li>
                 <li>
-                  <Link href={"#"}>Who's who</Link>
+                  <Link href={"#"}>Who&apos;s who</Link>
                 </li>
               </ul>
             </li>

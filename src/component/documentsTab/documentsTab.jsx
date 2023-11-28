@@ -42,7 +42,7 @@ const DocumentsTab = () => {
                     setDataToShow(wcpatData?.whatsNew);
                   }}
                 >
-                  What's New
+                  What&apos;s New
                 </button>
                 <button
                   className={`${style.tabs} ${key == 1 && style.active_tab}`}
